@@ -44,9 +44,8 @@ You should ask for access to this tools if you don't have it already:
 
 * [Github repo](https://github.com/ProyectoIntegrador2018/blue-lab)
 * [Backlog]()
-<!-- * [Heroku](https://crowdfront-staging.herokuapp.com/)  -->
 * [Documentation](https://drive.com)
-
+<!-- * [Heroku](https://crowdfront-staging.herokuapp.com/)  -->
 <!-- ## Development -->
 
 ### Technology Stack
