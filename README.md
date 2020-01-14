@@ -1,6 +1,4 @@
-# Nombre del proyecto
-
-Project Showroom
+# Project Showroom
 
 ## Table of contents
 
