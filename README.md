@@ -51,17 +51,17 @@ You should ask for access to this tools if you don't have it already:
 
 ### Technology Stack
 
-## Libraries
+#### Libraries
 * Node.js
 * AWS Lamba
 * Vue
 
-## Data Persistence
+##### Data Persistence
 * Mongo
 * AWS S3
 
 
-### Project Setup
+<!-- ### Project Setup
 
 
 ### Running the stack for Development
@@ -80,8 +80,4 @@ You should ask for access to this tools if you don't have it already:
 
 
 ### Checking code for potential issues
-
-
-```
-hello
-```
+ -->
