@@ -41,22 +41,27 @@
 You should ask for access to this tools if you don't have it already:
 
 * [Github repo](https://github.com/ProyectoIntegrador2018/blue-lab)
-* [Backlog]()
+* [Backlog](https://github.com/ProyectoIntegrador2018/blue-lab/projects/1)
 * [Documentation](https://drive.com)
 <!-- * [Heroku](https://crowdfront-staging.herokuapp.com/)  -->
 <!-- ## Development -->
 
 ### Technology Stack
 
+#### FrontEnd
+* HTML
+* CSS
+* Javascript
+
+#### BackEnd
+* AWS Mongo API 
+* AWS S3
+* AWS Lamba
+
 #### Libraries
 * Node.js
-* AWS Lamba
 * Vue
-
-##### Data Persistence
-* Mongo
-* AWS S3
-
+* Vuetify
 
 <!-- ### Project Setup
 
