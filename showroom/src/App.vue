@@ -1,11 +1,4 @@
 <template>
- <!-- <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/> -->
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -36,12 +29,7 @@
       </div>
     </div>
     </nav>
- <!-- </div> -->
 </template>
-
-
-
-
 
 <style>
 #app {
@@ -64,7 +52,6 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
 
 #mainNav {
     background-image: url("./assets/wallpaper.jpg");
@@ -137,4 +124,5 @@
       padding: 12px 0;
     }
   }
+
 </style>
