@@ -62,7 +62,6 @@
     font-size: 0px;
     right: 0;
     padding: 5px;
-   
     text-transform: uppercase;
     color: white;
     border: 0;
@@ -95,8 +94,7 @@
   .logo-img{
     display: flex;
     width: 120px;
-    height: 70px;
-    
+    height: 70px;    
   }
   
   @media (min-width: 992px) {
