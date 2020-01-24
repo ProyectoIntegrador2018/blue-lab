@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img class ="logo-img" src="./assets/blueppl.png">
+        <img class ="logo-img" src="./assets/BPLogoTAG_RGB-72dpi_Ver01-Blanco.png">
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -41,7 +41,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 5px;
 }
 
 #nav a {
@@ -54,13 +54,14 @@
 }
 
 #mainNav {
-    background-color: transparent !important;
+    background-image: url("./assets/wallpaper.jpg");
+     height: 12%;
   }
   
   #mainNav .navbar-toggler {
-    font-size: 12px;
+    font-size: 0px;
     right: 0;
-    padding: 13px;
+    padding: 5px;
     text-transform: uppercase;
     color: white;
     border: 0;
@@ -80,9 +81,9 @@
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 90%;
     font-weight: 400;
-    padding: 0.75em 0;
+    padding: 10px;
     letter-spacing: 1px;
-    color: red;
+    color: white;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
@@ -91,10 +92,9 @@
   }
 
   .logo-img{
-    width: 90px;
-    height: 50px;
-   overflow: hidden;
-    margin-top: -6px;
+    display: flex;
+    width: 120px;
+    height: 70px;    
   }
   
   @media (min-width: 992px) {
