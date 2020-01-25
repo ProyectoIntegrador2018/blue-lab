@@ -11,6 +11,7 @@ router.get('/itemsTag/:tag',items.getItemsByTag)
 router.get('/itemsTitle/:title',items.getItemsByTitle)
 router.delete('/item/:id',items.deleteItem)
 router.get('/tags',items.getDistinctTags)
+router.get('/titles',items.getTitles)
 
 
 router.get('*', function(req, res) {

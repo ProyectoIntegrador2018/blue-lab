@@ -104,12 +104,12 @@ const getDistinctTags = function(req,res){
 }
 
 //Get an array with all different tags on the DB
-const getDistinctTitle = function(req,res){
-    Item.distinct( "title" ).then(function(item){
-        return res.send(item)
-    }).catch(function(error){
-        res.status(500).send({error:error})
-    })
+const getTitles = function(req,res){
+  Item.find().select("title").then(function(item){
+      return res.send(item)
+  }).catch(function(error){
+      res.status(500).send({error:error})
+  })
 }
 
 module.exports = {
@@ -120,5 +120,6 @@ module.exports = {
     deleteItem: deleteItem,
     getItemsByTag: getItemsByTag,
     getItemsByTitle: getItemsByTitle,
-    getDistinctTags: getDistinctTags
+    getDistinctTags: getDistinctTags,
+    getTitles: getTitles
 }
