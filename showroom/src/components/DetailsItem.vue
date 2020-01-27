@@ -106,6 +106,7 @@ export default {
 }
 .imgFeature {
   border-radius: 10px;
+  margin-top:40px;
 }
 
 .certif{
