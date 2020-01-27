@@ -3,8 +3,11 @@
   <header class="masthead">
     <div class="container">
       <div class="intro-text">
+        <SearchBar></SearchBar>
         <div class="intro-lead-in"></div>
-        <div class="intro-heading text-uppercase"></div>
+        <div class="intro-heading text-uppercase">
+          <Numbers></Numbers>
+        </div>
         
       </div>
     </div>
@@ -12,10 +15,18 @@
 </template>
 
 <script>
+
+import SearchBar from '@/components/SearchBar.vue';
+import Numbers from '@/components/Numbers.vue';
+
 export default {
      name: 'Header',
   props: {
     msg: String
+  },
+  components:{
+    SearchBar,
+    Numbers
   }
 }
 </script>
@@ -33,8 +44,8 @@ header.masthead {
   
   header.masthead .intro-text {
     padding-top: 150px;
-    padding-bottom: 100px;
-  }
+    padding-bottom: 10px;
+;  }
   
   header.masthead .intro-text .intro-lead-in {
     font-size: 22px;
@@ -48,14 +59,14 @@ header.masthead {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
   @media (min-width: 768px) {
     header.masthead .intro-text {
-      padding-top: 300px;
-      padding-bottom: 200px;
+      padding-top: 150px;
+      padding-bottom: 10px;
     }
     header.masthead .intro-text .intro-lead-in {
       font-size: 40px;
@@ -68,7 +79,7 @@ header.masthead {
       font-size: 75px;
       font-weight: 700;
       line-height: 75px;
-      margin-bottom: 50px;
+      margin-bottom: 0px;
       font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     }
   }

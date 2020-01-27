@@ -67,10 +67,10 @@
     </div> <!-- div salesContact -->
 
     <div class= "tags">
-        <span class="badge badge-info">Info</span>
-        <span class="badge badge-info">Info</span>
-        <span class="badge badge-info">Info</span>
-        <span class="badge badge-info">Info</span>
+        <a href="#" class="badge badge-pill badge-primary">Tag</a>
+        <a href="#" class="badge badge-pill badge-light">Tag</a>
+        <a href="#" class="badge badge-pill badge-light">Tag</a>
+        <a href="#" class="badge badge-pill badge-light">Tag</a>
         
     </div> <!-- div tags -->
 </div> <!-- div extrasItem -->
@@ -176,6 +176,25 @@ a.active.nav-link{
     
     padding: 30px;
 }
+
+.badge{
+  margin: 1px;
+}
+
+.badge-primary{
+  background-color: #5576d1 !important;
+}
+
+.badge-primary:hover{
+  background-color: #7e9df2 !important;
+}
+
+.badge-light{
+  color:#5576d1 !important;
+  border-color: #5576d1;
+}
+
+
 .extrasItem{
     display: flex;
     flex-direction: column;
