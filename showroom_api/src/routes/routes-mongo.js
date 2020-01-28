@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const items = require('./controllers/items.js');
+const items = require('../controllers/items.js');
 
 router.post('/item',items.createItem)
 router.patch('/item/:id',items.updateItem)
