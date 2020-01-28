@@ -1,5 +1,7 @@
 # Project Showroom
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/70f84980dbc81bc670c6/maintainability)](https://codeclimate.com/github/ProyectoIntegrador2018/blue-lab/maintainability)
+
 ## Table of contents
 
 * [Client Details](#client-details)
