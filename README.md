@@ -62,6 +62,7 @@ You should ask for access to this tools if you don't have it already:
 * Node.js
 * Vue
 * Vuetify
+* Bootstrap
 
 <!-- ### Project Setup
 
