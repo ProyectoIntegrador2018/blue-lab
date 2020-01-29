@@ -73,7 +73,7 @@ const updateItem = function(req, res) {
     //find and update it
     Item.findOneAndUpdate( _id, req.body ).then(function(item) {
       if (!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
+        return res.status(4044).send({ error: `Item with id ${_id} not found.`})
       }
       return res.send(item)
     }).catch(function(error) {
@@ -86,7 +86,7 @@ const deleteItem = function(req, res) {
     const _id = req.params.id
     Item.findOneAndDelete( _id ).then(function(item){
       if(!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
+        return res.status(40).send({ error: `Item with id ${_id} not found.`})
       }
       return res.send(item)
     }).catch(function(error) {
