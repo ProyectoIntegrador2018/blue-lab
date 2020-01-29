@@ -2,132 +2,37 @@
 
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="card-group ">
-      <div class="card">
-        <img src="@/assets/Proy1.png" class="card-img h-100"  alt="...">
-        <div class="card-body">
-          <div class="card-img-overlay">
-            <div class="overlay">
-              <h1 class="card-title">Proyecto 1</h1>
-              <p class="card-text">Subtitulo de Proyecto</p>
-            </div>
-            <div class="badge-position">
-              <a href="#" class="badge badge-pill badge-primary">Financiero</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="card">
-        <img src="@/assets/Proy2.png" class="card-img h-100" alt="...">
-        <div class="card-body">
-          <div class="card-img-overlay">
-            <div class="overlay">
-              <h1 class="card-title">Proyecto 2</h1>
-              <p class="card-text">Subtitulo de Proyecto</p>
-            </div>
-            <div class="badge-position">
-              <a href="#" class="badge badge-pill badge-primary">Comercial</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="@/assets/Proy3.png" class="card-img h-100" alt="...">
-        <div class="card-body">
-          <div class="card-img-overlay">
-            <div class="overlay">
-              <h1 class="card-title">Proyecto 3</h1>
-              <p class="card-text">Subtitulo de Proyecto</p>
-            </div>
-            <div class="badge-position">
-              <a href="#" class="badge badge-pill badge-primary">Educativo</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="row">
+  <div class="row" >
     <div class="card-group">
 
-       <div class="card">
-        <img src="@/assets/Proy4.png" class="card-img h-100" alt="...">
-        <div class="card-body">
-          <div class="card-img-overlay">
-            <div class="overlay">
-              <h1 class="card-title">Proyecto 4</h1>
-              <p class="card-text">Subtitulo de Proyecto</p>
+      <div class="col-4 nopadding" v-for="card in cards" :key="card.title">
+        <div class="card" >
+          <img :src="card.src" class="card-img h-100" alt="...">
+            <div class="card-img-overlay">
+              <div class="overlay">
+                <h1 class="card-title">{{card.title}}</h1>
+                <p class="card-text">{{card.subtitle}}</p>
+              </div>
+              <div class="badge-position">
+                <a href="#" class="badge badge-pill badge-primary">Financiero</a>
+                <a href="#" class="badge badge-pill badge-light">Tag</a>
+                <a href="#" class="badge badge-pill badge-light">Tag</a>
+                <a href="#" class="badge badge-pill badge-light">Tag</a>
+              </div>
             </div>
-            <div class="badge-position">
-              <a href="#" class="badge badge-pill badge-primary">Administrativo</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-            </div>
-          </div>
         </div>
       </div>
-
-      <div class="card">
-        <img src="@/assets/Proy3.png" class="card-img h-100" alt="...">
-        <div class="card-body">
-          <div class="card-img-overlay">
-            <div class="overlay">
-              <h1 class="card-title">Proyecto 5</h1>
-              <p class="card-text">Subtitulo de Proyecto</p>
-            </div>
-            <div class="badge-position">
-              <a href="#" class="badge badge-pill badge-primary">Educativo</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="@/assets/Proy4.png" class="card-img h-100" alt="...">
-        <div class="card-body">
-          <div class="card-img-overlay">
-            <div class="overlay">
-              <h1 class="card-title">Proyecto 6</h1>
-              <p class="card-text">Subtitulo de Proyecto</p>
-            </div>
-            <div class="badge-position">
-              <a href="#" class="badge badge-pill badge-primary">Financiero</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-              <a href="#" class="badge badge-pill badge-light">Tag</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
 
 </div>
-
-
-
+    
 
 <!--  Seccion para cargar datos
+
+  src='@/assets/Proy1.png'
 
     <v-container fluid>
       <v-row dense>
@@ -160,18 +65,21 @@
 
 
 <script>
+  // import DetailsItem from '@/components/DetailsItem.vue'
+
+
   export default {
     name: "CardItem",
     data: () => ({
       cards: [
-        { title: 'Proyecto 1', src: '@/assets/Proy1.png', flex: 3, chip:"Financiero"},
-        { title: 'Proyecto 2', src: '@/assets/Proy2.png', flex: 3, chip:"Comercial"},
-        { title: 'Proyecto 3', src: '@/assets/Proy3.png', flex: 3, chip:"Educativo"},
-        { title: 'Proyecto 4', src: '@/assets/Proy4.png', flex: 3, chip:"Administrativo"},
-        { title: 'Proyecto 3', src: '@/assets/Proy3.png', flex: 3, chip:"Administrativo"},
-        { title: 'Proyecto 4', src: '@/assets/Proy4.png', flex: 3, chip:"Educativo"},
-        { title: 'Proyecto 1', src: '@/assets/Proy1.png', flex: 3, chip:"Comercial"},
-        { title: 'Proyecto 2', src: '@/assets/Proy2.png', flex: 3, chip:"Financiero"}
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), chip:"Financiero"},
+        { title: 'Proyecto 2', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), chip:"Comercial"},
+        { title: 'Proyecto 3', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), chip:"Educativo"},
+        { title: 'Proyecto 4', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Administrativo"},
+        { title: 'Proyecto 5', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), chip:"Administrativo"},
+        { title: 'Proyecto 6', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), chip:"Educativo"},
+        { title: 'Proyecto 7', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), chip:"Comercial"},
+        { title: 'Proyecto 8', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"}
 
       ],
     }),
@@ -180,7 +88,16 @@
       tipo(msg){
         alert('Selecionaste '+msg+' !')
       },
+      detailItem(){
+
+      },
+      pryectsCount(){
+
+      }
     }
+    // components:{
+    //   DetailsItem
+    // }
   }
   
 </script>
@@ -249,5 +166,12 @@
 .card:hover .overlay{
   opacity: 1;
 }
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+
 
 </style>

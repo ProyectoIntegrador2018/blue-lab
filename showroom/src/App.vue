@@ -3,8 +3,8 @@
     <NavBar></NavBar>
     <Header></Header>
     <CardItem></CardItem>
-    <DetailsItem></DetailsItem>
-    <CardItem></CardItem>
+    <!-- <DetailsItem></DetailsItem> -->
+    <!-- <CardItem></CardItem> -->
   </div>
 
 </template>
@@ -13,7 +13,7 @@
 // @ is an alias to /src
 import NavBar from '@/components/NavBar.vue'
 import Header from '@/components/Header.vue'
-import DetailsItem from '@/components/DetailsItem.vue'
+// import DetailsItem from '@/components/DetailsItem.vue'
 import CardItem from '@/components/CardItem.vue'
 
 
@@ -22,7 +22,6 @@ export default {
   components: {
     NavBar,
     Header,
-    DetailsItem,
     CardItem
     
   }
