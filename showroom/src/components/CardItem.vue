@@ -136,6 +136,7 @@
 
 .badge{
   margin: 1px;
+  font-size: 130% !important;
 }
 
 .badge-primary{
