@@ -15,10 +15,10 @@
                 <p class="card-text">{{card.subtitle}}</p>
               </div>
               <div class="badge-position">
-                <a href="#" class="badge badge-pill badge-primary">Financiero</a>
+                <a href="#" class="badge badge-pill badge-primary">{{card.tags}}</a>
+             <!--    <a href="#" class="badge badge-pill badge-light">Tag</a>
                 <a href="#" class="badge badge-pill badge-light">Tag</a>
-                <a href="#" class="badge badge-pill badge-light">Tag</a>
-                <a href="#" class="badge badge-pill badge-light">Tag</a>
+                <a href="#" class="badge badge-pill badge-light">Tag</a> -->
               </div>
             </div>
         </div>
@@ -72,16 +72,16 @@
     name: "CardItem",
     data: () => ({
       cards: [
-        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), chip:"Financiero"},
-        { title: 'Proyecto 2', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), chip:"Comercial"},
-        { title: 'Proyecto 3', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), chip:"Educativo"},
-        { title: 'Proyecto 4', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Administrativo"},
-        { title: 'Proyecto 5', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), chip:"Administrativo"},
-        { title: 'Proyecto 6', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), chip:"Educativo"},
-        { title: 'Proyecto 7', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), chip:"Comercial"},
-        { title: 'Proyecto 8', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"},
-        { title: 'Proyecto 9', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"},
-        { title: 'Proyecto 10', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"}
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
+        { title: 'Proyecto 2', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), tags:"Comercial"},
+        { title: 'Proyecto 3', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), tags:"Educativo"},
+        { title: 'Proyecto 4', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Administrativo"},
+        { title: 'Proyecto 5', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Administrativo"},
+        { title: 'Proyecto 6', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), tags:"Educativo"},
+        { title: 'Proyecto 7', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), tags:"Comercial"},
+        { title: 'Proyecto 8', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Financiero"},
+        { title: 'Proyecto 9', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Financiero"},
+        { title: 'Proyecto 10', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Financiero"}
 
 
       ],
@@ -108,73 +108,73 @@
 
 <style >
 
-.row{
-  height: 500px;
-}
+  .row{
+    height: 500px;
+  }
 
-.card-group{
-  height: 500px;
-}
-.card{
-  height: 500px;
-}
+  .card-group{
+    height: 500px;
+  }
+  .card{
+    height: 500px;
+  }
 
-.card-title{
-  color:#ffffff;
-}
+  .card-title{
+    color:#ffffff;
+  }
 
-.card-text{
-  color:#ffffff;
-}
+  .card-text{
+    color:#ffffff;
+  }
 
 
-.card-img-overlay:hover{
-  transition: 1s !important;
-  transition-delay: 1s !important;
-  background-image: linear-gradient(to top, rgba(46,46,46,0), rgba(46,46,46,1));
-}
+  .card-img-overlay:hover{
+    transition: 1s !important;
+    transition-delay: 1s !important;
+    background-image: linear-gradient(to top, rgba(46,46,46,0), rgba(46,46,46,1));
+  }
 
-.badge{
-  margin: 1px;
-  font-size: 130% !important;
-}
+  .badge{
+    margin: 1px;
+    font-size: 130% !important;
+  }
 
-.badge-primary{
-  background-color: #5576d1 !important;
-}
+  .badge-primary{
+    background-color: #5576d1 !important;
+  }
 
-.badge-primary:hover{
-  background-color: #7e9df2 !important;
-}
+  .badge-primary:hover{
+    background-color: #7e9df2 !important;
+  }
 
-.badge-light{
-  color:#5576d1 !important;
-  border-color: #5576d1;
-}
+  .badge-light{
+    color:#5576d1 !important;
+    border-color: #5576d1;
+  }
 
-.badge-position{
-    position: absolute;
-    left:0px;
-    bottom: 5px;
-    padding:5px 10px;
-}
+  .badge-position{
+      position: absolute;
+      left:0px;
+      bottom: 5px;
+      padding:5px 10px;
+  }
 
-.overlay{
-  
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .2s ease;
-}
+  .overlay{
+    
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .2s ease;
+  }
 
-.card:hover .overlay{
-  opacity: 1;
-}
+  .card:hover .overlay{
+    opacity: 1;
+  }
 
-.nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
-}
+  .nopadding {
+     padding: 0 !important;
+     margin: 0 !important;
+  }
 
 
 
