@@ -79,7 +79,10 @@
         { title: 'Proyecto 5', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), chip:"Administrativo"},
         { title: 'Proyecto 6', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), chip:"Educativo"},
         { title: 'Proyecto 7', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), chip:"Comercial"},
-        { title: 'Proyecto 8', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"}
+        { title: 'Proyecto 8', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"},
+        { title: 'Proyecto 9', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"},
+        { title: 'Proyecto 10', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), chip:"Financiero"}
+
 
       ],
     }),
@@ -106,14 +109,14 @@
 <style >
 
 .row{
-  height: 300px;
+  height: 500px;
 }
 
 .card-group{
-  height: 300px;
+  height: 500px;
 }
 .card{
-  height: 300px;
+  height: 500px;
 }
 
 .card-title{
