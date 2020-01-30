@@ -1,35 +1,23 @@
 const Url = require('../models/url')
-const deleteVar = require('./similarcalls');
+const similarcalls = require('./similarcalls');
 
 //Create Url
 const createUrl = function(req, res){
   const url = new Url({
       ...req.body
   })
-  url.save().then(function() {
-      return res.send(url)
-  }).catch(function(error) {
-      return res.status(400).send({ error: error })
-  })
+  similarcalls.create(url,res)
 }
 
 //Get All Url 
 const getUrls = function(req, res) {
-  Url.find().then(function(url) {
-      res.send(url)
-  }).catch(function(error){
-      res.status(500).send(error)
-  })
+  similarcalls.getModel(Url,res)
 }
 
 //Get url by extension
 const getUrlByExtension = function(req, res) {
   const extension = req.params.extension
-  Url.find({extension}).then(function(url) {
-    res.send(url)
-  }).catch(function(error){
-    res.status(500).send(error)
-  })
+  similarcalls.getByParameter(Url,extension,res,0)
 }
 
 //Update Url 
@@ -45,20 +33,13 @@ const updateUrl = function(req, res) {
     })
   }
   //find and update it
-  Url.findOneAndUpdate( extension, req.body ).then(function(url) {
-    if (!url) {
-      return res.status(404).send({ error: `Item with id ${extension} not found.`})
-    }
-    return res.send(url)
-  }).catch(function(error) {
-    res.status(500).send({ error: error })
-  })
+  similarcalls.findUpdate(Url,extension,req.body,res)
 }
 
 //Delete item by id
 const deleteUrl = function(req, res) {
   const extension = req.params.extension
-  deleteVar.delete(Url,extension,res)
+  similarcalls.delete(Url,extension,res)
 }
 
 module.exports = {

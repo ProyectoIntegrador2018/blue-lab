@@ -1,13 +1,9 @@
 const Item = require('../models/item')
-
+const similarcalls = require('./similarcalls');
 
 //Retrieve all items
 const getItems = function(req, res) {
-    Item.find().then(function(items) {
-        res.send(items)
-    }).catch(function(error){
-        res.status(500).send(error)
-    })
+    similarcalls.getModel(Item,res)
 }
 
 //Retrieve items by tag
@@ -36,11 +32,7 @@ const getItemsByTagNegate = function(req, res) {
 //Retrieve items by title
 const getItemsByTitle = function(req, res) {
     const title = req.params.title
-    Item.find({title}).then(function(items) {
-      res.send(items)
-    }).catch(function(error){
-      res.status(500).send(error)
-    })
+    similarcalls.getByParameter(Item,title,res,1)
   }
 
 
@@ -63,11 +55,7 @@ const createItem = function(req, res){
     const item = new Item({
         ...req.body
     })
-    item.save().then(function() {
-        return res.send(item)
-    }).catch(function(error) {
-        return res.status(400).send({ error: error })
-    })
+    similarcalls.create(item,res)    
 }
 
 //Update item
@@ -83,22 +71,14 @@ const updateItem = function(req, res) {
       })
     }
     //find and update it
-    Item.findOneAndUpdate( _id, req.body ).then(function(item) {
-      if (!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
-      }
-      return res.send(item)
-    }).catch(function(error) {
-      res.status(500).send({ error: error })
-    })
+    similarcalls.findUpdate(Item,_id,req.body,res)
   }
 
-const deleteVar = require('./similarcalls');
 
 //Delete item by id
 const deleteItem = function(req, res) {
     const _id = req.params.id
-    deleteVar.delete(Item,_id,res)
+    similarcalls.delete(Item,_id,res)
   }
 
 //Get an array with all different tags on the DB
