@@ -21,6 +21,18 @@ const getItemsByTag = function(req, res) {
     })
 }
 
+//Retrieve items by tag they dont have
+const getItemsByTagNegate = function(req, res) {
+  //find a item that has the tag we are looking for
+  const arr_tags = req.body.tags
+  Item.find({tags:{"$nin": arr_tags } }).then(function(items) {
+      res.send(items)
+  }).catch(function(error){
+      res.status(500).send(error)
+  })
+}
+
+
 //Retrieve items by title
 const getItemsByTitle = function(req, res) {
     const title = req.params.title
@@ -121,5 +133,6 @@ module.exports = {
     getItemsByTag: getItemsByTag,
     getItemsByTitle: getItemsByTitle,
     getDistinctTags: getDistinctTags,
-    getTitles: getTitles
+    getTitles: getTitles,
+    getItemsByTagNegate: getItemsByTagNegate
 }
