@@ -1,27 +1,26 @@
 <template>
 	<div class="container">
 		<div class="row h-100">
-			<div class="num col-sm">
-				<p>88</p>
-				<p class="num-title">Proyectos</p>
-			</div>
-
-			<div class="num col-sm">
-				<p>55</p>
-				<p class="num-title">Desarrolladores</p>
-			</div>
-
-			<div class="num col-sm">
-				<p>99</p>
-				<p class="num-title">Certificados</p>
+			<div class="num col-sm" v-for="number in numbers" :key="number.type">
+				<p>{{number.value}}</p>
+				<p class="num-title">{{number.description}}</p>
 			</div>
 		</div>
 	</div>
 </template>
 
+
+
 <script>
 	export default{
-		name:"Numbers"
+		name:"Numbers",
+		data: () => ({
+			numbers: [
+			{type:"1",value:"88",description:"Proyectos"},
+			{type:"2",value:"55",description:"Desarrolladores"},
+			{type:"3",value:"99",description:"Certificados"}
+			]
+		})
 	}
 </script>
 
