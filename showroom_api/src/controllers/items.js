@@ -93,17 +93,12 @@ const updateItem = function(req, res) {
     })
   }
 
+const deleteVar = require('./similarcalls');
+
 //Delete item by id
 const deleteItem = function(req, res) {
     const _id = req.params.id
-    Item.findOneAndDelete( _id ).then(function(item){
-      if(!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
-      }
-      return res.send(item)
-    }).catch(function(error) {
-      res.status(505).send({ error: error })
-    })
+    deleteVar.delete(Item,_id,res)
   }
 
 //Get an array with all different tags on the DB

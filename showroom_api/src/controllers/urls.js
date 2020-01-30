@@ -1,4 +1,5 @@
 const Url = require('../models/url')
+const deleteVar = require('./similarcalls');
 
 //Create Url
 const createUrl = function(req, res){
@@ -57,14 +58,7 @@ const updateUrl = function(req, res) {
 //Delete item by id
 const deleteUrl = function(req, res) {
   const extension = req.params.extension
-  Url.findOneAndDelete( extension ).then(function(url){
-    if(!url) {
-      return res.status(404).send({ error: `Item with id ${_id} not found.`})
-    }
-    return res.send(url)
-  }).catch(function(error) {
-    res.status(505).send({ error: error })
-  })
+  deleteVar.delete(Url,extension,res)
 }
 
 module.exports = {
