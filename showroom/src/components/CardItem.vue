@@ -16,18 +16,23 @@
               </div>
               <div class="badge-position">
                 <a href="#" class="badge badge-pill badge-primary">{{card.tags}}</a>
-             <!--    <a href="#" class="badge badge-pill badge-light">Tag</a>
+             <!--<a href="#" class="badge badge-pill badge-light">Tag</a>
                 <a href="#" class="badge badge-pill badge-light">Tag</a>
                 <a href="#" class="badge badge-pill badge-light">Tag</a> -->
+                   <button  v-on:click="isDetail = !isDetail" class="btn btn-primary"> detalles </button>
               </div>
+           
             </div>
         </div>
       </div>
     </div>
   </div>
 
+<DetailsItem v-show="isDetail" class="detailsItem"></DetailsItem>
 
 </div>
+
+
     
 
 <!--  Seccion para cargar datos
@@ -65,26 +70,18 @@
 
 
 <script>
-  // import DetailsItem from '@/components/DetailsItem.vue'
+  import DetailsItem from '@/components/DetailsItem.vue'
 
 
   export default {
     name: "CardItem",
     data: () => ({
       cards: [
-        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
-        { title: 'Proyecto 2', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), tags:"Comercial"},
-        { title: 'Proyecto 3', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), tags:"Educativo"},
-        { title: 'Proyecto 4', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Administrativo"},
-        { title: 'Proyecto 5', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Administrativo"},
-        { title: 'Proyecto 6', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy2.png'), tags:"Educativo"},
-        { title: 'Proyecto 7', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy3.png'), tags:"Comercial"},
-        { title: 'Proyecto 8', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Financiero"},
-        { title: 'Proyecto 9', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Financiero"},
-        { title: 'Proyecto 10', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy4.png'), tags:"Financiero"}
-
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"}
+        
 
       ],
+      isDetail: false
     }),
 
     methods:{
@@ -97,10 +94,10 @@
       pryectsCount(){
 
       }
+    },
+     components:{
+     DetailsItem
     }
-    // components:{
-    //   DetailsItem
-    // }
   }
   
 </script>
@@ -174,6 +171,10 @@
   .nopadding {
      padding: 0 !important;
      margin: 0 !important;
+  }
+
+  .detailsItem{
+    position: absolute;
   }
 
 
