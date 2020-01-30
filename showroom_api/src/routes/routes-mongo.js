@@ -2,8 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const items = require('../controllers/items.js');
-const home = require('../controllers/homes.js');
-const urlCustom = require('../controllers/urls-custom.js')
+const urls = require('../controllers/urls.js')
 
 //rutas para items
 router.get('/items',items.getItems)
@@ -17,19 +16,12 @@ router.post('/item',items.createItem)
 router.patch('/item/:id',items.updateItem) 
 router.delete('/item/:id',items.deleteItem) 
 
-//rutas para administracion de home
-router.get('/home',home.getHome)
-router.post('/home',home.createHome)
-router.patch('/home',home.updateHome)
-
 //rutes para administracion de urls custom
-router.get('/urls',urlCustom.getUrlsCustoms)
-router.get('/url/:extension',urlCustom.getUrlByExtension)
-router.post('/url',urlCustom.createUrlCustom)
-router.patch('/url/:extension',urlCustom.updateUrlCustom)
-router.delete('/url/:extension',urlCustom.deleteUrlCustom)
-
-
+router.get('/urls',urls.getUrls)
+router.get('/url/:extension',urls.getUrlByExtension)
+router.post('/url',urls.createUrl)
+router.patch('/url/:extension',urls.updateUrl)
+router.delete('/url/:extension',urls.deleteUrl)
 
 router.get('*', function(req, res) {
   res.send({

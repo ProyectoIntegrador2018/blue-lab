@@ -1,38 +1,38 @@
-const UrlCustom = require('../models/url-custom')
+const Url = require('../models/url')
 
-//Create Urlcustom
-const createUrlCustom = function(req, res){
-  const urlc = new UrlCustom({
+//Create Url
+const createUrl = function(req, res){
+  const url = new Url({
       ...req.body
   })
-  urlc.save().then(function() {
-      return res.send(urlc)
+  url.save().then(function() {
+      return res.send(url)
   }).catch(function(error) {
       return res.status(400).send({ error: error })
   })
 }
 
-//Get All Url Custom
-const getUrlsCustoms = function(req, res) {
-  UrlCustom.find().then(function(urlc) {
-      res.send(urlc)
+//Get All Url 
+const getUrls = function(req, res) {
+  Url.find().then(function(url) {
+      res.send(url)
   }).catch(function(error){
       res.status(500).send(error)
   })
 }
 
-//Get url custom by extension
+//Get url by extension
 const getUrlByExtension = function(req, res) {
   const extension = req.params.extension
-  UrlCustom.find({extension}).then(function(urlc) {
-    res.send(urlc)
+  Url.find({extension}).then(function(url) {
+    res.send(url)
   }).catch(function(error){
     res.status(500).send(error)
   })
 }
 
-//Update Url Custom
-const updateUrlCustom = function(req, res) {
+//Update Url 
+const updateUrl = function(req, res) {
   const extension = req.params.extension
   //check all keys that can be updated
   const updates = Object.keys(req.body)
@@ -44,33 +44,33 @@ const updateUrlCustom = function(req, res) {
     })
   }
   //find and update it
-  UrlCustom.findOneAndUpdate( extension, req.body ).then(function(urlc) {
-    if (!urlc) {
-      return res.status(404).send({ error: `Item with id ${_id} not found.`})
+  Url.findOneAndUpdate( extension, req.body ).then(function(url) {
+    if (!url) {
+      return res.status(404).send({ error: `Item with id ${extension} not found.`})
     }
-    return res.send(urlc)
+    return res.send(url)
   }).catch(function(error) {
     res.status(500).send({ error: error })
   })
 }
 
 //Delete item by id
-const deleteUrlCustom = function(req, res) {
+const deleteUrl = function(req, res) {
   const extension = req.params.extension
-  UrlCustom.findOneAndDelete( extension ).then(function(urlc){
-    if(!urlc) {
+  Url.findOneAndDelete( extension ).then(function(url){
+    if(!url) {
       return res.status(404).send({ error: `Item with id ${_id} not found.`})
     }
-    return res.send(urlc)
+    return res.send(url)
   }).catch(function(error) {
     res.status(505).send({ error: error })
   })
 }
 
 module.exports = {
-    createUrlCustom: createUrlCustom,
-    getUrlsCustoms: getUrlsCustoms,
+    createUrl: createUrl,
+    getUrls: getUrls,
     getUrlByExtension: getUrlByExtension,
-    updateUrlCustom: updateUrlCustom,
-    deleteUrlCustom: deleteUrlCustom
+    updateUrl: updateUrl,
+    deleteUrl: deleteUrl
 }
