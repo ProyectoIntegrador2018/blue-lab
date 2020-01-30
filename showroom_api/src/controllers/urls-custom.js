@@ -46,7 +46,7 @@ const updateUrlCustom = function(req, res) {
   //find and update it
   UrlCustom.findOneAndUpdate( extension, req.body ).then(function(urlc) {
     if (!urlc) {
-      return res.status(4044).send({ error: `Item with id ${_id} not found.`})
+      return res.status(404).send({ error: `Item with id ${_id} not found.`})
     }
     return res.send(urlc)
   }).catch(function(error) {
@@ -59,7 +59,7 @@ const deleteUrlCustom = function(req, res) {
   const extension = req.params.extension
   UrlCustom.findOneAndDelete( extension ).then(function(urlc){
     if(!urlc) {
-      return res.status(40).send({ error: `Item with id ${_id} not found.`})
+      return res.status(404).send({ error: `Item with id ${_id} not found.`})
     }
     return res.send(urlc)
   }).catch(function(error) {

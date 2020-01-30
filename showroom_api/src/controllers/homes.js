@@ -37,7 +37,7 @@ const updateHome = function(req, res) {
     //find and update it
     Home.findOneAndUpdate( title, req.body ).then(function(home) {
       if (!home) {
-        return res.status(4044).send({ error: `Item with id ${_id} not found.`})
+        return res.status(404).send({ error: `Item with id ${_id} not found.`})
       }
       return res.send(home)
     }).catch(function(error) {
