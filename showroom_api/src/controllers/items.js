@@ -1,13 +1,9 @@
 const Item = require('../models/item')
-
+const similarcalls = require('./similarcalls');
 
 //Retrieve all items
 const getItems = function(req, res) {
-    Item.find().then(function(items) {
-        res.send(items)
-    }).catch(function(error){
-        res.status(500).send(error)
-    })
+    similarcalls.getModel(Item,res)
 }
 
 //Retrieve items by tag
@@ -21,14 +17,22 @@ const getItemsByTag = function(req, res) {
     })
 }
 
+//Retrieve items by tag they dont have
+const getItemsByTagNegate = function(req, res) {
+  //find a item that has the tag we are looking for
+  const arr_tags = req.body.tags
+  Item.find({tags:{"$nin": arr_tags } }).then(function(items) {
+      res.send(items)
+  }).catch(function(error){
+      res.status(500).send(error)
+  })
+}
+
+
 //Retrieve items by title
 const getItemsByTitle = function(req, res) {
     const title = req.params.title
-    Item.find({title}).then(function(items) {
-      res.send(items)
-    }).catch(function(error){
-      res.status(500).send(error)
-    })
+    similarcalls.getByParameter(Item,title,res,1)
   }
 
 
@@ -51,11 +55,7 @@ const createItem = function(req, res){
     const item = new Item({
         ...req.body
     })
-    item.save().then(function() {
-        return res.send(item)
-    }).catch(function(error) {
-        return res.status(400).send({ error: error })
-    })
+    similarcalls.create(item,res)    
 }
 
 //Update item
@@ -71,27 +71,14 @@ const updateItem = function(req, res) {
       })
     }
     //find and update it
-    Item.findOneAndUpdate( _id, req.body ).then(function(item) {
-      if (!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
-      }
-      return res.send(item)
-    }).catch(function(error) {
-      res.status(500).send({ error: error })
-    })
+    similarcalls.findUpdate(Item,_id,req.body,res)
   }
+
 
 //Delete item by id
 const deleteItem = function(req, res) {
     const _id = req.params.id
-    Item.findOneAndDelete( _id ).then(function(item){
-      if(!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
-      }
-      return res.send(item)
-    }).catch(function(error) {
-      res.status(505).send({ error: error })
-    })
+    similarcalls.delete(Item,_id,res)
   }
 
 //Get an array with all different tags on the DB
@@ -121,5 +108,6 @@ module.exports = {
     getItemsByTag: getItemsByTag,
     getItemsByTitle: getItemsByTitle,
     getDistinctTags: getDistinctTags,
-    getTitles: getTitles
+    getTitles: getTitles,
+    getItemsByTagNegate: getItemsByTagNegate
 }
