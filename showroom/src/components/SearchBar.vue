@@ -5,7 +5,7 @@
       <v-text-field v-model="search" label="Search tags"  outlined rounded solo clearable></v-text-field>
     </div>
   <div class="badge-foreground">
-    <a href="#" class="badge badge-pill badge-primary" v-for="(tag,i) in tags" :key="i">{{tag}}</a>
+    <a href="#" class="badge badge-pill badge-light" v-for="(tag,i) in tags" :key="i">{{tag}}</a>
     <!-- <v-chip v-for="(tag, i) in tags" :key="i" class="mx-1" color=#5576d1 > {{ tag }}</v-chip> -->
    </div>
   
