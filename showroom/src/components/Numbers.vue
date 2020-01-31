@@ -20,8 +20,11 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
-		name:"Numbers"
+		name:"Numbers",
+		computed: mapState(['cont_1'])
 	}
 </script>
 
