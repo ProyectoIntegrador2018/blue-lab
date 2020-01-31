@@ -1,6 +1,6 @@
 <template>
     <div class="topNavBar">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <img class ="logo-img" src="../assets/BPLogoTAG_RGB-72dpi_Ver01-Blanco.png">
@@ -36,7 +36,6 @@
 <script>
 export default {
      name: 'NavBar',
-
          mounted(){
  window.addEventListener("scroll", function(){
          const nav = document.querySelector('#mainNav');
@@ -67,7 +66,10 @@ export default {
 #nav {
   padding: 5px;
 }
-
+nav.scroll {
+  background-color: red;
+     height: 12%;
+}
 #nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -78,8 +80,9 @@ export default {
 }
 
 #mainNav {
-    background-image: url("../assets/wallpaper.jpg");
+  /* background-color: #2c3e5094; */
      height: 12%;
+   
   }
   
   #mainNav .navbar-toggler {
@@ -129,7 +132,8 @@ export default {
       padding-bottom: 25px;
       transition: padding-top 0.3s, padding-bottom 0.3s;
       border: none;
-      background-color: transparent;
+     
+     
     }
     #mainNav .navbar-brand {
       font-size: 1.75em;
