@@ -36,11 +36,23 @@
 <script>
 export default {
      name: 'NavBar',
-  props: {
-    msg: String
-  }
-}
 
+         mounted(){
+ window.addEventListener("scroll", function(){
+         const nav = document.querySelector('#mainNav');
+        
+         if (this.scrollY > 80) {
+          nav.style.backgroundImage = "url(/img/wallpaper.57a95dba.jpg)";
+         } else {
+         nav.style.backgroundImage = 'none';
+        // nav.style.backgroundColor= '#2c3e5094';
+          
+         }
+         
+       })
+     }
+ 
+     }
 </script>
 
 <style>
