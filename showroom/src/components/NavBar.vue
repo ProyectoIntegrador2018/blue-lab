@@ -50,15 +50,8 @@ export default {
          
        })
      }
-
  
      }
-
-
-  
-    
-
-
 </script>
 
 <style>
