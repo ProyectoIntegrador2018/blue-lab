@@ -4,15 +4,21 @@
     <div class="searchBar">
       <v-text-field v-model="search" label="Search tags"  outlined rounded solo clearable></v-text-field>
     </div>
-  <div class="badge-foreground">
-    <a href="#" class="badge badge-pill badge-primary" v-for="(tag,i) in tags" :key="i">{{tag}}</a>
-    <!-- <v-chip v-for="(tag, i) in tags" :key="i" class="mx-1" color=#5576d1 > {{ tag }}</v-chip> -->
-   </div>
-  
-</div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="badge-foreground">
+             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tags" :key="i"  @click="searchGenerated()">{{tag}}</a>
+            <!-- <v-chip v-for="(tag, i) in tags" :key="i" class="mx-1" color=#5576d1 > {{ tag }}</v-chip> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
 </template>
 
 <script>
+  import {mapState} from 'vuex';
 
   export default {
     name: "SearchBar",
@@ -23,12 +29,24 @@
         {tag: 'Educativo'},
         {tag: 'Administrativo'},
         {tag: 'Transporte'},
+        {tag: 'Tag1'},
+        {tag: 'Tag2'},
+        {tag: 'Tag3'},
+        {tag: 'Tag4'},
+        {tag: 'Tag5'},
+        {tag: 'Tag6'},
+        {tag: 'Tag7'},
+        {tag: 'Tag8'},
       ],
       search: '',
     }),
 
-    computed: {
-      tags () {
+    computed:
+
+    mapState(['tags']),
+
+
+    tags () {
         if (!this.search) return []
 
         const tags = []
@@ -50,8 +68,16 @@
           return text.indexOf(search) > -1
         })
       },
+
+    methods: {
+      searchGenerated(){
+        alert('Se genera una busqueda para reorganizar los proyectos!')
+      }  
     },
+    
+      
   }
+  
 </script>
 
 
@@ -88,14 +114,5 @@
  /* .searchBar-space{
     margin-bottom: 20px;
   }*/
-
-/*  .v-imput_slot{
-    border-radius: 50px 50px 50px 50px;
-    background-color:#ffffff;
-  }*/
-
-/*  .custom-text-field.v-text-field.v-text-field--enclosed .v-input__slot {
-  padding: 0;
-}*/
 
 </style>
