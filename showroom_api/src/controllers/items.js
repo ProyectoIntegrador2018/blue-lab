@@ -1,12 +1,9 @@
-const Item = require('../models/item')
+const Item = require('../models/item');
+const similarcalls = require('./similarcalls');
 
 //Retrieve all items
 const getItems = function(req, res) {
-    Item.find().then(function(items) {
-        res.send(items)
-    }).catch(function(error){
-        res.status(500).send(error)
-    })
+    similarcalls(Item,res)
 }
 
 //Retrieve items by tag
@@ -71,28 +68,15 @@ const updateItem = function(req, res) {
         error: 'Invalid update, only allowed to update: ' + allowedUpdates
       })
     }
-    //find and update it
-    Item.findOneAndUpdate( _id, req.body ).then(function(item) {
-      if (!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
-      }
-      return res.send(item)
-    }).catch(function(error) {
-      res.status(500).send({ error: error })
-    })
+
+    similarcalls.findUpdate(Item,_id,req.body,res)
   }
 
 //Delete item by id
 const deleteItem = function(req, res) {
     const _id = req.params.id
-    Item.findOneAndDelete( _id ).then(function(item){
-      if(!item) {
-        return res.status(404).send({ error: `Item with id ${_id} not found.`})
-      }
-      return res.send(item)
-    }).catch(function(error) {
-      res.status(505).send({ error: error })
-    })
+
+    similarcalls.delete(Item,_id,res)
   }
 
 //Get an array with all different tags on the DB
