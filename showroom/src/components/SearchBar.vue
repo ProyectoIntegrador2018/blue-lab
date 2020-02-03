@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex';
+ // import {mapState} from 'vuex';
 
   export default {
     name: "SearchBar",
@@ -41,9 +41,9 @@
       search: '',
     }),
 
-    computed:
+    computed:{
 
-    mapState(['tags']),
+   // mapState(['tags']),
 
 
     tags () {
@@ -68,7 +68,7 @@
           return text.indexOf(search) > -1
         })
       },
-
+    },
     methods: {
       searchGenerated(){
         alert('Se genera una busqueda para reorganizar los proyectos!')
