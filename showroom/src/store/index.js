@@ -59,8 +59,8 @@ export default new Vuex.Store({
     },
     loadItemsByTag({dispatch},tag) {
       const payload = {
-        mutation: 'ITEMS_BY_TAD',
-        get: 'itemsTag/' + tag
+        get: 'itemsTag/' + tag,
+        mutation: 'ITEMS_BY_TAG'
       }
       dispatch('getCall', payload)
     }
