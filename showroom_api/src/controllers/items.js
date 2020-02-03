@@ -29,7 +29,6 @@ const getItemsByTagNegate = function(req, res) {
 }
 
 
-
 //Retrieve item by id
 const getItem = function(req, res) {
     const _id = req.params.id
@@ -64,14 +63,14 @@ const updateItem = function(req, res) {
         error: 'Invalid update, only allowed to update: ' + allowedUpdates
       })
     }
-
+    //find and update it
     similarcalls.findUpdate(Item,_id,req.body,res)
   }
+
 
 //Delete item by id
 const deleteItem = function(req, res) {
     const _id = req.params.id
-
     similarcalls.delete(Item,_id,res)
   }
 
@@ -102,5 +101,6 @@ module.exports = {
     getItemsByTag: getItemsByTag,
     getItemsByTagNegate: getItemsByTagNegate,
     getDistinctTags: getDistinctTags,
-    getTitles: getTitles
+    getTitles: getTitles,
+    getItemsByTagNegate: getItemsByTagNegate
 }
