@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col">
           <div class="badge-foreground">
-             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tagsFunc" :key="i"  @click="searchGenerated()">{{tag}}</a>
+             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tagsFunc" :key="i"  @click="searchGenerated(tag)">{{tag}}</a>
             <!-- <v-chip v-for="(tag, i) in tags" :key="i" class="mx-1" color=#5576d1 > {{ tag }}</v-chip> -->
           </div>
         </div>
@@ -43,7 +43,7 @@
 
     computed:{
 
-    ...mapState(['tags']),
+    ...mapState(['distinct_tags']),
 
 
     tagsFunc () {
@@ -58,11 +58,11 @@
         return tagsBD
       },
       searching () {
-        if (!this.search) return this.tags
+        if (!this.search) return this.distinct_tags
 
         const search = this.search.toLowerCase()
 
-        return this.tags.filter(item => {
+        return this.distinct_tags.filter(item => {
           const text = item.toLowerCase()
 
           return text.indexOf(search) > -1
@@ -70,8 +70,8 @@
       },
     },
     methods: {
-      searchGenerated(){
-        alert('Se genera una busqueda para reorganizar los proyectos!')
+      searchGenerated(tag){
+        alert('Se genera una busqueda para reorganizar los proyectos con el Tag='+tag+' !')
       }  
     },
     
