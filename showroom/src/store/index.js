@@ -11,14 +11,15 @@ Vue.axios.defaults.baseURL = "https://immense-tundra-47885.herokuapp.com/";
 export default new Vuex.Store({
   state: {
     items: [],
-    tags: [],
+    tags: ['tag1','tag2','tag3'],
     title_cont_1: "",
     title_cont_2: "",
     title_cont_3: "",
     cont_1: 0,
     cont_2: 0,
     cont_3: 0,
-    distinct_tags: []
+    distinct_tags: [],
+    details_item: []
   },
   actions: {
     loadItems({commit}) {
@@ -41,8 +42,21 @@ export default new Vuex.Store({
       }).catch(error => {
         throw new Error(`API ${error}`);
       });
+    },
+    loadDetailsItem({commit},id) {
+      Vue.axios.get('item/'+ id).then(result => {
+        commit('SAVE_DETAILS_ITEM', result.data);
+      }).catch(error => {
+        throw new Error(`API ${error}`);
+      });
+    },
+    loadItemsByTag({commit},tag) {
+      Vue.axios.get('itemsTag/'+ tag).then(result => {
+        commit('ITEMS_BY_TAG', result.data);
+      }).catch(error => {
+        throw new Error(`API ${error}`);
+      });
     }
-
   },
   mutations: {
     SAVE_ITEMS(state, items) {
@@ -59,7 +73,13 @@ export default new Vuex.Store({
     },
     SAVE_DISTINCT_TAGS(state,distinct_tags){
       state.distinct_tags = distinct_tags;
-    }
+    },
+    SAVE_DETAILS_ITEM(state,details){
+      state.details_item = details;
+    },
+    ITEMS_BY_TAG(state,items){
+      state.items = items;
+    },
   },
   modules: {
   }
