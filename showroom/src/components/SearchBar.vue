@@ -71,7 +71,7 @@
     },
     methods: {
       searchGenerated(tag){
-        alert('Se genera una busqueda para reorganizar los proyectos con el Tag='+tag+' !')
+        alert('Se genera una busqueda para reorganizar los proyectos con el Tag= "'+tag+'" !')
       }  
     },
     
