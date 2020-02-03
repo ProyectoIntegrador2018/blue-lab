@@ -78,9 +78,7 @@
     data: () => ({
       cards: [
 
-        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"}
-
-        
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"} 
 
       ],
       isDetail: false
