@@ -81,6 +81,8 @@
 
 
 <script>
+
+
 export default {
   name: 'DetailsItem',
   props: {

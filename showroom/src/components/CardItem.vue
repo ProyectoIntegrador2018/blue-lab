@@ -6,64 +6,51 @@
   <div class="row" >
     <div class="card-group">
 
-      <div class="col-4 nopadding" v-for="card in cards" :key="card.title">
-        <div class="card" >
-          <img :src="card.src" class="card-img h-100" alt="...">
+      <div class="col-4 nopadding" v-for="(itemObj,i) in items" :key="`${i}-${itemObj.title}`">
+        <a class="card" data-toggle="modal" data-target=".bd-example-modal-lg" >
+          
+          <img :src="itemObj.img_principal" class="card-img h-100" alt="...">
+          
             <div class="card-img-overlay">
-              <div class="overlay">
-                <h1 class="card-title">{{card.title}}</h1>
-                <p class="card-text">{{card.subtitle}}</p>
+              
+                <h1 class="card-title">{{itemObj.title}}</h1>
+                 <div class="overlay">
+                <p class="card-text">{{itemObj.title_descr_1}}</p>
               </div>
               <div class="badge-position">
-                <a href="#" class="badge badge-pill badge-primary">{{card.tags}}</a>
+                
+                  <ul v-for="(tag,j) in itemObj.tags" :key="j"> <a href="#" class="badge badge-pill badge-primary"> {{tag}} </a></ul>
+                
              <!--<a href="#" class="badge badge-pill badge-light">Tag</a>
                 <a href="#" class="badge badge-pill badge-light">Tag</a>
                 <a href="#" class="badge badge-pill badge-light">Tag</a> -->
-                   <button  v-on:click="isDetail = !isDetail" class="btn btn-primary"> detalles </button>
+                 
               </div>
            
             </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
 
-<DetailsItem v-show="isDetail" class="detailsItem"></DetailsItem>
+ 
+
+  <!-- Moadal show details -->
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1 " role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <DetailsItem></DetailsItem>
+    </div>
+  </div>
+</div>
+
+
 
 </div>
 
 
-    
-
-<!--  Seccion para cargar datos
-
-  src='@/assets/Proy1.png'
-
-    <v-container fluid>
-      <v-row dense>
-       
-        <v-col v-for="card in cards" :key="card.title" :cols="card.flex" >
-          
-          <v-card>
-              <v-img :src="card.src" height="300px">
-              <v-flex xs12 align-end flexbox>
-               <v-card-title  >{{card.title}}</v-card-title> 
-            </v-flex>
-              <v-card-subtitle > Subtitulo de proyecto</v-card-subtitle>
-              </v-img>
-
-              <v-card-actions>
-              <v-spacer></v-spacer>
-
-              Make array
-              <v-chip color=#5576d1 text-color=#ffffff x-small class="mx-1" @click="tipo(card.chip)"> {{card.chip}} </v-chip>
-              <v-chip color=#ffffff text-color=#5576d1 x-small class="mx-1" outlined> Tag </v-chip>
-              <v-chip color=#ffffff text-color=#5576d1 x-small class="mx-1" outlined> Tag </v-chip>
-              <v-chip color=#ffffff text-color=#5576d1 x-small class="mx-1" outlined> Tag </v-chip>
-
-
- -->
-  
    
 
 </template>
@@ -71,33 +58,25 @@
 
 <script>
   import DetailsItem from '@/components/DetailsItem.vue'
-
+  import {mapState} from 'vuex';
 
   export default {
     name: "CardItem",
     data: () => ({
       cards: [
 
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
         { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"} 
 
       ],
-      isDetail: false
     }),
-
-    methods:{
-      tipo(msg){
-        alert('Selecionaste '+msg+' !')
-      },
-      detailItem(){
-
-      },
-      pryectsCount(){
-
-      }
-    },
      components:{
      DetailsItem
-    }
+    },
+     computed: mapState(['items']),
+      created(){
+    this.$store.dispatch('loadItems')
+  }
   }
   
 </script>
@@ -175,6 +154,11 @@
 
   .detailsItem{
     position: absolute;
+  }
+
+  ul, a{
+    display:inline;
+   
   }
 
 

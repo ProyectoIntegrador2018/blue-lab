@@ -1,9 +1,13 @@
 <template>
   <div class='api_algo'>
     <h1>hello</h1>
-    <li v-for="(keyword,i) in items" :key="i"  >
+    <ul v-for="(keyword,i) in items" :key="i"  >
       {{keyword.title}}
-    </li>
+      <li v-for="(tag,j) in keyword.tags" :key="j">
+      {{tag}}
+      </li>
+    </ul>
+    
   </div>
 
 </template>
