@@ -23,12 +23,18 @@ export default new Vuex.Store({
   },
   actions: {
     loadItems({commit}) {
-      Vue.axios.get('items').then(result => {commit('SAVE_ITEMS', result.data);
-      }).catch(error => {throw new Error(`API ${error}`)});
+      Vue.axios.get('items').then(result => {
+        commit('SAVE_ITEMS', result.data);
+      }).catch(error => {
+        throw new Error(`API ${error}`);
+      });
     },
     loadHome({commit}) {
-      Vue.axios.get('url/home').then(result => {commit('SAVE_HOME', result.data[0]);
-      }).catch(error => {throw new Error(`API ${error}`)});
+      Vue.axios.get('url/home').then(result => {
+        commit('SAVE_HOME', result.data[0]);
+      }).catch(error => {
+        throw new Error(`API ${error}`);
+      });
     },
     loadDistinctTags({commit}) {
       Vue.axios.get('tags').then(result => {
@@ -38,12 +44,18 @@ export default new Vuex.Store({
       });
     },
     loadDetailsItem({commit},id) {
-      Vue.axios.get('item/'+ id).then(result => {commit('SAVE_DETAILS_ITEM', result.data);
-      }).catch(error => {throw new Error(`API ${error}`)});
+      Vue.axios.get('item/'+ id).then(result => {
+        commit('SAVE_DETAILS_ITEM', result.data);
+      }).catch(error => {
+        throw new Error(`API ${error}`);
+      });
     },
     loadItemsByTag({commit},tag) {
-      Vue.axios.get('itemsTag/'+ tag).then(result => {commit('ITEMS_BY_TAG', result.data);
-      }).catch(error => {throw new Error(`API ${error}`)});
+      Vue.axios.get('itemsTag/'+ tag).then(result => {
+        commit('ITEMS_BY_TAG', result.data);
+      }).catch(error => {
+        throw new Error(`API ${error}`);
+      });
     }
   },
   mutations: {
