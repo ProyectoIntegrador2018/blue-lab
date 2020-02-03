@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col">
           <div class="badge-foreground">
-             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tags" :key="i"  @click="searchGenerated()">{{tag}}</a>
+             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tagsFunc" :key="i"  @click="searchGenerated()">{{tag}}</a>
             <!-- <v-chip v-for="(tag, i) in tags" :key="i" class="mx-1" color=#5576d1 > {{ tag }}</v-chip> -->
           </div>
         </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
- // import {mapState} from 'vuex';
+ import {mapState} from 'vuex';
 
   export default {
     name: "SearchBar",
@@ -43,27 +43,27 @@
 
     computed:{
 
-   // mapState(['tags']),
+    ...mapState(['tags']),
 
 
-    tags () {
+    tagsFunc () {
         if (!this.search) return []
 
-        const tags = []
+        const tagsBD = []
 
         for (const search of this.searching) {
-          tags.push(search.tag)
+          tagsBD.push(search)
         }
 
-        return tags
+        return tagsBD
       },
       searching () {
-        if (!this.search) return this.items
+        if (!this.search) return this.tags
 
         const search = this.search.toLowerCase()
 
-        return this.items.filter(item => {
-          const text = item.tag.toLowerCase()
+        return this.tags.filter(item => {
+          const text = item.toLowerCase()
 
           return text.indexOf(search) > -1
         })
