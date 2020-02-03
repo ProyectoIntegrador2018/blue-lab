@@ -10,12 +10,12 @@
 * [Management resources](#management-resources)
 * [Technology Stack](#technology-stack)
 * [Project Setup](#proyect-setup)
-<!-- * [Running the stack for development](#running-the-stack-for-development)
+* [Running the stack for development](#running-the-stack-for-development)
 * [Stop the project](#stop-the-project)
-* [Restoring the database](#restoring-the-database)
+<!-- * [Restoring the database](#restoring-the-database)
 * [Debugging](#debugging)
-* [Running specs](#running-specs)
-* [Checking code for potential issues](#checking-code-for-potential-issues) -->
+* [Running specs](#running-specs) -->
+* [Checking code for potential issues](#checking-code-for-potential-issues)
 
 
 ### Client Details
@@ -66,23 +66,61 @@ You should ask for access to this tools if you don't have it already:
 * Vuetify
 * Bootstrap
 
-<!-- ### Project Setup
+### Project Setup
 
+#### Instalar NPM que se encuentra dentro de Node.js (https://www.npmjs.com/get-npm)
+Para asegurarse que está instalado, correr el siguiente comando.
+```shell
+$ npm -v
+```
 
 ### Running the stack for Development
+Las siguientes instrucciones son para correr un ambiente local utilizando Vue CLI y Node.js.
 
+#### 1. Clonar repositorio y acceder a la carpeta del proyecto Showroom
+```shell
+$ git clone https://github.com/ProyectoIntegrador2018/blue-lab.git
+$ cd blue-lab/showroom
+```
+
+#### 2. Instalar el proyecto
+```shell
+$ npm install
+```
+
+#### 3. Ejecutar aplicación web compilada en tiempo real para development
+```shell
+$ npm run serve
+```
+
+#### 4. Acceder al sitio
+Abrir al navegador de elección y abrir el enlace generado. Usualmente el mensaje es el siguiente.
+```shell
+ DONE  Compiled successfully in 555ms                                                                         9:31:01 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/
+  - Network: http://192.168.0.11:8080/
+```
 
 ### Stop the project
+#### Para detener la ejecución de la aplicación web
+```shell
+Ctrl + c
+```
 
-
-### Restoring the database
+<!-- ### Restoring the database
 
 
 ### Debugging
 
 
 ### Running specs
-
+ -->
 
 ### Checking code for potential issues
- -->
+#### Para verificar cualquier tipo de error se utiliza Lints 
+```
+npm run lint
+```

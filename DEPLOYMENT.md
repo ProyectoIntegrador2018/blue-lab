@@ -1,38 +1,4 @@
 
-## Local
-Las siguientes instrucciones son para correr un ambiente local utilizando Vue CLI y Node.js.
-
-### 1. Clonar repositorio y acceder a la carpeta del proyecto Showroom
-```shell
-$ git clone https://github.com/ProyectoIntegrador2018/blue-lab.git
-$ cd blue-lab/showroom
-```
-
-### 2. Asegurarse de tener instalado NPM contenido por Node.js (https://www.npmjs.com/get-npm)
-Para asegurarse que está instalado, correr el siguiente comando.
-```shell
-$ npm -v
-```
-
-### 3. Instalar el proyecto
-```shell
-$ npm install
-```
-
-### 4. Ejecutar aplicación web compilada en tiempo real para development
-```shell
-$ npm run serve
-```
-
-### 5. Acceder al sitio
-Abrir al navegador de elección y abrir el enlace generado.
-
-### 6. Detener ejecución de aplicación web
-```shell
-Ctrl + z
-```
-
-
 ## Deployment
 Las siguientes instrucciones son para generar un archivo listo para deployment utilizando Vue CLI y Node.js.
 
