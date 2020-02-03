@@ -2,7 +2,7 @@
   <div class='home'>
     <NavBar></NavBar>
     <Header></Header>
-    <button v-on:click="saludar">Saludar</button>
+    <button v-on:click="saludar('si')">Saludar</button>
     <CardItem></CardItem>
     <!-- <DetailsItem></DetailsItem> -->
     <!-- <CardItem></CardItem> -->
@@ -26,18 +26,20 @@ export default {
     Header,
     CardItem
   },
-  computed: mapState(['items','tags','title_cont_1','title_cont_2','title_cont_3','cont_1','cont_2','cont_3','distinct_tags','details_item']),
+  computed: mapState(['items','tags','title_cont_1','title_cont_2','title_cont_3','cont_1','cont_2','cont_3','distinct_tags','details_item','id_details','tag_search']),
   created(){
     this.$store.dispatch('loadHome')
     this.$store.dispatch('loadDistinctTags')
-    //this.$store.dispatch('loadDetailsItem','5e327f597df5a93624913e5c') //pasar el id que del item que se quiere utilizar
+    //this.$store.dispatch('loadDetailsItem',this.$store.state.id_details) //pasar el id que del item que se quiere utilizar
     this.$store.dispatch('loadItems') 
     //this.$store.dispatch('loadItemsByTag','tag1') //llamada para buscar por tag   
 
   },
   methods: {
-    saludar: function () {
-      
+    saludar: function (s) {
+      console.log(s)
+      //this.$store.dispatch('loadDetailsItem',this.$store.state.id_details) //pasar el id que del item que se quiere utilizar
+      this.$store.dispatch('loadItemsByTag',this.$store.state.tag_search) //llamada para buscar por tag   
       //this.$store.dispatch('eliminateDuplicate')
 
     }

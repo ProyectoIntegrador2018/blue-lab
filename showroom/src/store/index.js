@@ -19,7 +19,9 @@ export default new Vuex.Store({
     cont_2: 0,
     cont_3: 0,
     distinct_tags: [],
-    details_item: []
+    details_item: [],
+    id_details: "5e327f597df5a93624913e5c",
+    tag_search: "tag1"
   },
   actions: {
     getCall({commit},payload){
