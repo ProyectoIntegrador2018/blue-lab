@@ -3,7 +3,7 @@ const similarcalls = require('./similarcalls');
 
 //Retrieve all items
 const getItems = function(req, res) {
-    similarcalls(Item,res)
+    similarcalls.getModel(Item,res)
 }
 
 //Retrieve items by tag
@@ -49,11 +49,7 @@ const createItem = function(req, res){
     const item = new Item({
         ...req.body
     })
-    item.save().then(function() {
-        return res.send(item)
-    }).catch(function(error) {
-        return res.status(400).send({ error: error })
-    })
+    similarcalls.create(item,res)
 }
 
 //Update item
