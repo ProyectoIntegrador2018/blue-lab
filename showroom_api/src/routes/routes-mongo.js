@@ -11,7 +11,6 @@ router.get('/tags',items.getDistinctTags)
 router.get('/titles',items.getTitles) 
 router.get('/itemsTag/:tag',items.getItemsByTag) 
 router.get('/itemsTagNegate',items.getItemsByTagNegate) 
-router.get('/itemsTitle/:title',items.getItemsByTitle) 
 router.post('/item',items.createItem) 
 router.patch('/item/:id',items.updateItem) 
 router.delete('/item/:id',items.deleteItem) 
@@ -20,8 +19,8 @@ router.delete('/item/:id',items.deleteItem)
 router.get('/urls',urls.getUrls)
 router.get('/url/:extension',urls.getUrlByExtension)
 router.post('/url',urls.createUrl)
-router.patch('/url/:extension',urls.updateUrl)
-router.delete('/url/:extension',urls.deleteUrl)
+router.patch('/url/:id',urls.updateUrl)
+router.delete('/url/:id',urls.deleteUrl)
 
 router.get('*', function(req, res) {
   res.send({

@@ -1,4 +1,4 @@
-const Item = require('../models/item')
+const Item = require('../models/item');
 const similarcalls = require('./similarcalls');
 
 //Retrieve all items
@@ -29,13 +29,6 @@ const getItemsByTagNegate = function(req, res) {
 }
 
 
-//Retrieve items by title
-const getItemsByTitle = function(req, res) {
-    const title = req.params.title
-    similarcalls.getByParameter(Item,title,res,1)
-  }
-
-
 //Retrieve item by id
 const getItem = function(req, res) {
     const _id = req.params.id
@@ -55,7 +48,7 @@ const createItem = function(req, res){
     const item = new Item({
         ...req.body
     })
-    similarcalls.create(item,res)    
+    similarcalls.create(item,res)
 }
 
 //Update item
@@ -106,7 +99,7 @@ module.exports = {
     getItem: getItem,
     deleteItem: deleteItem,
     getItemsByTag: getItemsByTag,
-    getItemsByTitle: getItemsByTitle,
+    getItemsByTagNegate: getItemsByTagNegate,
     getDistinctTags: getDistinctTags,
     getTitles: getTitles,
     getItemsByTagNegate: getItemsByTagNegate

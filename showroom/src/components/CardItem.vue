@@ -3,8 +3,8 @@
 
 <div class="container-fluid">
 
-  <div class="row" >
-    <div class="card-group">
+  <div class="row rowCards" >
+    <div class="card-group" id="searchAnchor">
 
       <div class="col-4 nopadding" v-for="card in cards" :key="card.title">
         <div class="card" >
@@ -78,8 +78,13 @@
     data: () => ({
       cards: [
 
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
+        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
         { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"}
-
         
 
       ],
@@ -107,7 +112,7 @@
 
 <style >
 
-  .row{
+  .rowCards{
     height: 500px;
   }
 
