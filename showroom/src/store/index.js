@@ -18,7 +18,6 @@ export default new Vuex.Store({
     cont_1: 0,
     cont_2: 0,
     cont_3: 0,
-
     distinct_tags: [],
     details_item: [],
     id_details: "5e327f597df5a93624913e5c",

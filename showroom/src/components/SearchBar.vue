@@ -71,7 +71,8 @@
     },
     methods: {
       searchGenerated(tag){
-        alert('Se genera una busqueda para reorganizar los proyectos con el Tag= "'+tag+'" !')
+        this.$store.dispatch('loadItemsByTag',tag) //llamada para buscar por tag   
+        //alert('Se genera una busqueda para reorganizar los proyectos con el Tag= "'+tag+'" !')
       }  
     },
     

@@ -38,8 +38,8 @@ export default {
   methods: {
     saludar: function (s) {
       console.log(s)
-      //this.$store.dispatch('loadDetailsItem',this.$store.state.id_details) //pasar el id que del item que se quiere utilizar
-      this.$store.dispatch('loadItemsByTag',this.$store.state.tag_search) //llamada para buscar por tag   
+      this.$store.dispatch('loadDetailsItem',this.$store.state.id_details) //pasar el id que del item que se quiere utilizar
+      //this.$store.dispatch('loadItemsByTag',this.$store.state.tag_search) //llamada para buscar por tag   
       //this.$store.dispatch('eliminateDuplicate')
 
     }
