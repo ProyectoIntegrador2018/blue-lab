@@ -11,20 +11,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Financiero</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Comercial</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Educativo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">Administrativo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Transporte</a>
+          <li class="nav-item" v-for="(tag,i) in tags" :key="i">
+            <a class="nav-link js-scroll-trigger" href="#">{{tag}}</a>
           </li>
         </ul>
       </div>
@@ -34,24 +22,25 @@
 </template>
 
 <script>
+
+import {mapState} from 'vuex';
+
 export default {
-     name: 'NavBar',
-         mounted(){
- window.addEventListener("scroll", function(){
-         const nav = document.querySelector('#mainNav');
-        
-         if (this.scrollY > 80) {
-          nav.style.backgroundImage = "url(/img/wallpaper.57a95dba.jpg)";
-         } else {
-         nav.style.backgroundImage = 'none';
-        // nav.style.backgroundColor= '#2c3e5094';
-          
-         }
-         
-       })
-     }
- 
-     }
+  name: 'NavBar',
+  mounted(){
+    window.addEventListener("scroll", function(){
+      const nav = document.querySelector('#mainNav');
+      if (this.scrollY > 80) {
+        nav.style.backgroundImage = "url(/img/wallpaper.57a95dba.jpg)";
+      }
+      else {
+        nav.style.backgroundImage = 'none';
+      // nav.style.backgroundColor= '#2c3e5094';
+      }
+    })
+  },
+  computed:mapState(['tags']),
+}
 </script>
 
 <style>
