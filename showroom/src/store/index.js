@@ -22,47 +22,55 @@ export default new Vuex.Store({
     details_item: []
   },
   actions: {
-    loadItems({commit}) {
-      Vue.axios.get('items').then(result => {
-        commit('SAVE_ITEMS', result.data);
+    getCall({commit},payload){
+      Vue.axios.get(payload.get).then(result => {
+        commit(payload.mutation, result.data);
       }).catch(error => {
         throw new Error(`API ${error}`);
       });
     },
-    loadHome({commit}) {
-      Vue.axios.get('url/home').then(result => {
-        commit('SAVE_HOME', result.data[0]);
-      }).catch(error => {
-        throw new Error(`API ${error}`);
-      });
+    loadItems({dispatch}) {
+      const payload = {
+        mutation: 'SAVE_ITEMS',
+        get: 'items'
+      }
+      dispatch('getCall', payload)
     },
-    loadDistinctTags({commit}) {
-      Vue.axios.get('tags').then(result => {
-        commit('SAVE_DISTINCT_TAGS', result.data);
-      }).catch(error => {
-        throw new Error(`API ${error}`);
-      });
+    loadHome({dispatch}) {
+      const payload = {
+        mutation: 'SAVE_HOME',
+        get: 'url/home'
+      }
+      dispatch('getCall', payload)
     },
-    loadDetailsItem({commit},id) {
-      Vue.axios.get('item/'+ id).then(result => {
-        commit('SAVE_DETAILS_ITEM', result.data);
-      }).catch(error => {
-        throw new Error(`API ${error}`);
-      });
+    loadDistinctTags({dispatch}) {
+      const payload = {
+        mutation: 'SAVE_DISTINCT_TAGS',
+        get: 'tags'
+      }
+      dispatch('getCall', payload)
     },
-    loadItemsByTag({commit},tag) {
-      Vue.axios.get('itemsTag/'+ tag).then(result => {
-        commit('ITEMS_BY_TAG', result.data);
-      }).catch(error => {
-        throw new Error(`API ${error}`);
-      });
+    loadDetailsItem({dispatch},id) {
+      const payload = {
+        mutation: 'SAVE_DETAILS_ITEM',
+        get: 'item/' + id
+      }
+      dispatch('getCall', payload)
+    },
+    loadItemsByTag({dispatch},tag) {
+      const payload = {
+        mutation: 'ITEMS_BY_TAD',
+        get: 'itemsTag/' + tag
+      }
+      dispatch('getCall', payload)
     }
   },
   mutations: {
     SAVE_ITEMS(state, items) {
       state.items = items;
     },
-    SAVE_HOME(state, home) {
+    SAVE_HOME(state, home_aux) {
+      const home = home_aux[0]
       state.title_cont_1 = home.title_cont_1;
       state.title_cont_2 = home.title_cont_2;
       state.title_cont_3 = home.title_cont_3;
