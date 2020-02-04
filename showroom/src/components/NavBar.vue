@@ -2,7 +2,7 @@
     <div class="topNavBar">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" @click="resetItems()">
         <img class ="logo-img" src="../assets/BPLogoTAG_RGB-72dpi_Ver01-Blanco.png">
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,10 @@ export default {
   methods:{
     navGenerated(tag){
       this.$store.dispatch('loadItemsByTag',tag)
-    }
+    },
+    resetItems(){
+      this.$store.dispatch('loadItems')
+    },
   },
 }
 </script>

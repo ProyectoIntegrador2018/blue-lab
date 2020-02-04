@@ -1,6 +1,6 @@
 <template>
     <!-- Header -->
-  <header class="masthead">
+  <header class="masthead" id="page-top">
     <div class="container">
       <div class="intro-text">
         <SearchBar></SearchBar>

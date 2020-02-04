@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col">
           <div class="badge-foreground">
-             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tagsFunc" :key="i"  @click="searchGenerated(tag)">{{tag}}</a>
+             <a href="#searchAnchor" class="badge badge-pill badge-light" v-for="(tag,i) in tagsFunc" :key="i"  @click="searchGenerated(tag); resetTags() ">{{tag}}</a>
             <!-- <v-chip v-for="(tag, i) in tags" :key="i" class="mx-1" color=#5576d1 > {{ tag }}</v-chip> -->
           </div>
         </div>
@@ -73,6 +73,9 @@
       searchGenerated(tag){
         this.$store.dispatch('loadItemsByTag',tag) //llamada para buscar por tag   
         //alert('Se genera una busqueda para reorganizar los proyectos con el Tag= "'+tag+'" !')
+      },
+      resetTags(){
+        this.search = null
       }  
     },
     
