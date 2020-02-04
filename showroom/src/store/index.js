@@ -6,7 +6,7 @@ import VueAxios from "vue-axios";
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
 
-Vue.axios.defaults.baseURL = "https://immense-tundra-47885.herokuapp.com/";
+Vue.axios.defaults.baseURL = "https://quiet-cliffs-83666.herokuapp.com/";
 
 export default new Vuex.Store({
   state: {
@@ -21,7 +21,10 @@ export default new Vuex.Store({
     distinct_tags: [],
     details_item: [],
     id_details: "5e327f597df5a93624913e5c",
-    tag_search: "tag1"
+    tag_search: "tag1",
+    contact_name: "",
+    contact_phone: "",
+    contact_email: ""
   },
   actions: {
     getCall({commit},payload){
@@ -82,6 +85,9 @@ export default new Vuex.Store({
       state.cont_2 = home.cont_2;
       state.cont_3 = home.cont_3;
       state.tags = home.navbar;
+      state.contact_email = home.contact_email;
+      state.contact_name = home.contact_name;
+      state.contact_phone = home.contact_phone;
     },
     SAVE_DISTINCT_TAGS(state,distinct_tags){
       state.distinct_tags = distinct_tags;
