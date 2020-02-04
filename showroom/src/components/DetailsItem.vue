@@ -2,11 +2,12 @@
 
 <div class="detailItem">
     <div class="featureItem">
-    <img src= "../assets/blueppl.png" class="imgFeature" >
+    <img :src="itemObj.img_feature" class="imgFeature" >
     </div>
 
      <div class="tabsItem">
-    
+         
+    <p>{{itemObj.title}} </p>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Info 1</a>
@@ -67,7 +68,7 @@
     </div> <!-- div salesContact -->
 
     <div class= "tags">
-        <a href="#" class="badge badge-pill badge-primary">Tag</a>
+        <a href="#" class="badge badge-pill badge-primary">{{itemObj.tags}}</a>
         <a href="#" class="badge badge-pill badge-light">Tag</a>
         <a href="#" class="badge badge-pill badge-light">Tag</a>
         <a href="#" class="badge badge-pill badge-light">Tag</a>
@@ -86,8 +87,11 @@
 export default {
   name: 'DetailsItem',
   props: {
-    msg: String
-  }
+            itemObj: {
+                type: Object,
+                required: true
+            }
+        }
 }
 </script>
 

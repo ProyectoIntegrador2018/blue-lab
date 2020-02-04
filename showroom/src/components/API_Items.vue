@@ -3,8 +3,8 @@
     <h1>hello</h1>
     <ul v-for="(keyword,i) in items" :key="i"  >
       {{keyword.title}}
-      <li v-for="(tag,j) in keyword.tags" :key="j">
-      {{tag}}
+      <li >
+      {{keyword._id}}
       </li>
     </ul>
     

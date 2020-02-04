@@ -7,7 +7,7 @@
     <div class="card-group">
 
       <div class="col-4 nopadding" v-for="(itemObj,i) in items" :key="`${i}-${itemObj.title}`">
-        <a class="card" data-toggle="modal" data-target=".bd-example-modal-lg" >
+        <a class="card" data-toggle="modal" data-target=".bd-example-modal-lg"  @click="displayDetails(itemObj._id)">
           
           <img :src="itemObj.img_principal" class="card-img h-100" alt="...">
           
@@ -29,11 +29,7 @@
            
             </div>
         </a>
-      </div>
-    </div>
-  </div>
 
- 
 
   <!-- Moadal show details -->
 
@@ -41,10 +37,19 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1 " role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <DetailsItem></DetailsItem>
+      <DetailsItem :itemObj="itemObj" ></DetailsItem>
     </div>
   </div>
 </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+ 
+
 
 
 
@@ -76,6 +81,11 @@
      computed: mapState(['items']),
       created(){
     this.$store.dispatch('loadItems')
+  },
+  methods:{
+    displayDetails(itemId){
+      this.$store.dispatch('loadDetailsItem',itemId)
+    }
   }
   }
   
