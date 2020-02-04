@@ -57,12 +57,12 @@
 
         <div class="phone-div">
         <img src="../assets/phone.svg" class="phone">
-        <p> {{contact_name}} </p>
+        <p> {{contact_phone}} </p>
         </div>
 
         <div class="mail-div">
         <img src="../assets/mail.svg" class="mail">
-        <p> {{contact_email00}} </p>
+        <p> {{contact_email}} </p>
         </div>
 
         </div>
