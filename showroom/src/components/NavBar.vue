@@ -2,7 +2,7 @@
     <div class="topNavBar">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" @click="resetItems()">
         <img class ="logo-img" src="../assets/BPLogoTAG_RGB-72dpi_Ver01-Blanco.png">
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,20 +11,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Financiero</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Comercial</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Educativo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">Administrativo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Transporte</a>
+          <li class="nav-item" v-for="(tag,i) in tags" :key="i">
+            <a class="nav-link js-scroll-trigger" href="#searchAnchor" @click="navGenerated(tag)">{{tag}}</a>
           </li>
         </ul>
       </div>
@@ -34,52 +22,62 @@
 </template>
 
 <script>
+
+import {mapState} from 'vuex';
+
 export default {
-     name: 'NavBar',
-         mounted(){
- window.addEventListener("scroll", function(){
-         const nav = document.querySelector('#mainNav');
-        
-         if (this.scrollY > 80) {
-          nav.style.backgroundImage = "url(/img/wallpaper.57a95dba.jpg)";
-         } else {
-         nav.style.backgroundImage = 'none';
-        // nav.style.backgroundColor= '#2c3e5094';
-          
-         }
-         
-       })
-     }
- 
-     }
+  name: 'NavBar',
+  mounted(){
+    window.addEventListener("scroll", function(){
+      const nav = document.querySelector('#mainNav');
+      if (this.scrollY > 80) {
+        nav.style.backgroundImage = "url(/img/wallpaper.57a95dba.jpg)";
+      }
+      else {
+        nav.style.backgroundImage = 'none';
+      // nav.style.backgroundColor= '#2c3e5094';
+      }
+    })
+  },
+  computed:mapState(['tags']),
+
+  methods:{
+    navGenerated(tag){
+      this.$store.dispatch('loadItemsByTag',tag)
+    },
+    resetItems(){
+      this.$store.dispatch('loadItems')
+    },
+  },
+}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#nav {
-  padding: 5px;
-}
-nav.scroll {
-  background-color: red;
-     height: 12%;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav {
+    padding: 5px;
+  }
+  nav.scroll {
+    background-color: red;
+       height: 12%;
+  }
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
 
-#mainNav {
+  #mainNav {
   /* background-color: #2c3e5094; */
      height: 12%;
    
