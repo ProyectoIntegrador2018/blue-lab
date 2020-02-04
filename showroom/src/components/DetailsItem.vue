@@ -97,7 +97,7 @@ export default {
    padding: 10px;
    margin: 0px;
    flex-direction: row;
-   background-color: #060e3b;
+   background: #1c1c4d;
    border-radius:5px;
   
    
