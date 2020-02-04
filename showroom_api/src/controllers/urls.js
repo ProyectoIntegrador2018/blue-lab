@@ -29,7 +29,7 @@ const updateUrl = function(req, res) {
   const _id = req.params.id
   //check all keys that can be updated
   const updates = Object.keys(req.body)
-  const allowedUpdates = ['navbar','title_cont_1','cont_1','title_cont_2','cont_2','title_cont_3','cont_3','item_1','item_2','item_3']
+  const allowedUpdates = ['navbar','title_cont_1','cont_1','title_cont_2','cont_2','title_cont_3','cont_3','item_1','item_2','item_3','contact_name','contact_phone','contact_email','contact_pic']
   const isValidUpdate = updates.every((update) => allowedUpdates.includes(update))
   if( !isValidUpdate ) {
     return res.status(400).send({
