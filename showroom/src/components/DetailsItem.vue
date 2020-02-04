@@ -97,7 +97,7 @@ export default {
    padding: 10px;
    margin: 0px;
    flex-direction: row;
-   background: #1c1c4d;
+   background: radial-gradient( rgb(20, 72, 114), rgba(0,0,0,.9));
    border-radius:5px;
   
    
