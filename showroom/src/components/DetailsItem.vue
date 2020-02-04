@@ -52,17 +52,17 @@
         <div class="contactInfo">
         <div class="user-div">
         <img src="../assets/user.svg" class="user">
-        <p> German de la Fuente </p>
+        <p> {{contact_name}} </p>
         </div>
 
         <div class="phone-div">
         <img src="../assets/phone.svg" class="phone">
-        <p> 8123456789 </p>
+        <p> {{contact_name}} </p>
         </div>
 
         <div class="mail-div">
         <img src="../assets/mail.svg" class="mail">
-        <p> gdelafuente@bluepeople.com </p>
+        <p> {{contact_email00}} </p>
         </div>
 
         </div>
@@ -87,7 +87,7 @@
  import {mapState} from 'vuex';
 export default {
   name: 'DetailsItem',
- computed: mapState(['details_item']),
+ computed: mapState(['details_item','contact_name','contact_phone','contact_email']),
 }
 </script>
 
