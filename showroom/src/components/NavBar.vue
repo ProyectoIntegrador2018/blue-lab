@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item" v-for="(tag,i) in tags" :key="i">
-            <a class="nav-link js-scroll-trigger" href="#">{{tag}}</a>
+            <a class="nav-link js-scroll-trigger" href="#searchAnchor" @click="navGenerated(tag)">{{tag}}</a>
           </li>
         </ul>
       </div>
@@ -40,35 +40,41 @@ export default {
     })
   },
   computed:mapState(['tags']),
+
+  methods:{
+    navGenerated(tag){
+      this.$store.dispatch('loadItemsByTag',tag)
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#nav {
-  padding: 5px;
-}
-nav.scroll {
-  background-color: red;
-     height: 12%;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav {
+    padding: 5px;
+  }
+  nav.scroll {
+    background-color: red;
+       height: 12%;
+  }
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
 
-#mainNav {
+  #mainNav {
   /* background-color: #2c3e5094; */
      height: 12%;
    
