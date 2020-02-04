@@ -59,6 +59,7 @@ You should ask for access to this tools if you don't have it already:
 * AWS Mongo API 
 * AWS S3
 * AWS Lamba
+* Vuex
 
 #### Libraries
 * Node.js
