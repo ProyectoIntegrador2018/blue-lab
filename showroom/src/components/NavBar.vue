@@ -86,7 +86,7 @@ nav.scroll {
   }
   
   #mainNav .navbar-toggler {
-    font-size: 0px;
+    font-size: 12px;
     right: 0;
     padding: 5px;
    
@@ -108,7 +108,7 @@ nav.scroll {
   
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 90%;
-    font-weight: 400;
+    font-weight: 600;
     padding: 10px;
     letter-spacing: 1px;
     color: white;

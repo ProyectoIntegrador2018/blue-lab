@@ -3,12 +3,11 @@
 
 <div class="container-fluid">
 
-  <div class="row" >
-    <div class="card-group">
+  <div class="row rowCards" >
+    <div class="card-group col-12 nopadding" id="searchAnchor">
 
       <div class="col-4 nopadding" v-for="(itemObj,i) in items" :key="`${i}-${itemObj.title}`">
-        <a class="card" data-toggle="modal" data-target=".bd-example-modal-lg"  @click="displayDetails(itemObj._id)">
-          
+        <a class="card" data-toggle="modal" data-target=".bd-example-modal-lg" @click="displayDetails(itemObj._id)">
           <img :src="itemObj.img_principal" class="card-img h-100" alt="...">
           
             <div class="card-img-overlay">
@@ -37,7 +36,7 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1 " role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <DetailsItem :itemObj="itemObj" ></DetailsItem>
+      <DetailsItem ></DetailsItem>
     </div>
   </div>
 </div>
@@ -47,9 +46,6 @@
       </div>
     </div>
   </div>
-
- 
-
 
 
 
@@ -71,7 +67,7 @@
       cards: [
 
         { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"},
-        { title: 'Proyecto 1', subtitle:'Subtitulo de proyecto' ,src: require('@/assets/Proy1.png'), tags:"Financiero"} 
+
 
       ],
     }),
@@ -79,12 +75,12 @@
      DetailsItem
     },
      computed: mapState(['items']),
-      created(){
-    this.$store.dispatch('loadItems')
-  },
+     
+  
   methods:{
     displayDetails(itemId){
-      this.$store.dispatch('loadDetailsItem',itemId)
+     // this.$store.dispatch('loadDetailsItem',itemId)
+     this.$store.dispatch('loadDetailsItem',itemId) 
     }
   }
   }
@@ -94,7 +90,7 @@
 
 <style >
 
-  .row{
+  .rowCards{
     height: 500px;
   }
 
