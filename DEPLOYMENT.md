@@ -55,8 +55,11 @@ $ git push heroku master
 
 ### 8. Prueba de proyecto
 Ir a la liga que proporciona heroku para probar que el sistema sirva.
+
 En nuestro caso la liga es https://intense-oasis-72007.herokuapp.com/
+
 Si aparece esto en el navegador, to app esta corriendo correctamente.
+
 {"error":"This route does not exist, try /other"}
 
 
