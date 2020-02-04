@@ -47,6 +47,18 @@ const urlSchema = new mongoose.Schema({
     },
     hidden_items:{
         type: [String]
+    },
+    contact_name:{
+        type: String
+    },
+    contact_phone:{
+        type: String
+    },
+    contact_email:{
+        type: String
+    },
+    contact_pic:{
+        type: String
     }
 })
 
