@@ -2,7 +2,7 @@
   <div class='home'>
     <NavBar></NavBar>
     <Header></Header>
-    <button v-on:click="saludar('si')">Saludar</button>
+    
     <CardItem></CardItem>
     <!-- <DetailsItem></DetailsItem> -->
     <!-- <CardItem></CardItem> -->
@@ -38,7 +38,7 @@ export default {
   methods: {
     saludar: function (s) {
       console.log(s)
-      this.$store.dispatch('loadDetailsItem',this.$store.state.id_details) //pasar el id que del item que se quiere utilizar
+      //this.$store.dispatch('loadDetailsItem',this.$store.state.id_details) //pasar el id que del item que se quiere utilizar
       //this.$store.dispatch('loadItemsByTag',this.$store.state.tag_search) //llamada para buscar por tag   
       //this.$store.dispatch('eliminateDuplicate')
 
@@ -46,3 +46,19 @@ export default {
   }
 }
 </script>
+
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+
+  font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color:white;
+}
+</style>

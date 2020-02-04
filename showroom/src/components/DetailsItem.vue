@@ -1,47 +1,49 @@
 <template>
 
 <div class="detailItem">
-    <div class="featureItem">
-    <img src= "../assets/blueppl.png" class="imgFeature" >
-    </div>
+<h1 class="titleItem">{{details_item.title}}</h1>
 
-     <div class="tabsItem">
-    
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+<div class="container">
+  <div class="row">
+    <div class="col-4" id="featureItem">
+        
+      <img :src="details_item.img_feature" class="imgFeature" >
+    </div>
+    <div class="col-4" id="tabsItem">
+        
+       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Info 1</a>
+             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{details_item.title_descr_1}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Info 2</a>
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{details_item.title_descr_1}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Info 3</a>
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">{{details_item.title_descr_1}}</a>
         </li>
         </ul>
-
-
-        <div class="tab-content" id="myTabContent">
+         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {{details_item.descr_1}}
             </div>
 
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+               {{details_item.descr_1}}
             </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{{details_item.descr_1}}</div>
  
             </div> 
-    </div> <!-- div tabsItem -->
 
-<div class= "extrasItem">
+    </div>
+    <div class="col-4" id="extrasItem">
     
-    <div class="certif">
+     <div class="certif">
         <img src="../assets/aws-certif.png" alt="aws" class="aws-img">
         <img src="../assets/iso-certif.png" alt="iso" class="iso-img">
         <img src="../assets/microsoft-certif.png" alt="certif" class="microsoft-img">
         <img src="../assets/istob-certf.png" alt="istob" class="istob-img">
 
-    </div>
+    </div> 
 
     <div class="salesContact">
         <div class="contactImg">
@@ -64,49 +66,60 @@
         </div>
 
         </div>
-    </div> <!-- div salesContact -->
+    </div> 
 
     <div class= "tags">
-        <a href="#" class="badge badge-pill badge-primary">Tag</a>
-        <a href="#" class="badge badge-pill badge-light">Tag</a>
-        <a href="#" class="badge badge-pill badge-light">Tag</a>
-        <a href="#" class="badge badge-pill badge-light">Tag</a>
+        <ul v-for="(tag,j) in details_item.tags" :key="j"> <a href="#" class="badge badge-pill badge-primary"> {{tag}} </a></ul>
+       
         
-    </div> <!-- div tags -->
-</div> <!-- div extrasItem -->
+    </div> 
+    </div>
+  </div>
+</div>
 
-</div> <!-- div detailItem -->
+</div>
 
 </template>
 
 
 <script>
+
+ import {mapState} from 'vuex';
 export default {
   name: 'DetailsItem',
-  props: {
-    msg: String
-  }
+ computed: mapState(['details_item']),
 }
 </script>
 
 <style>
 .detailItem{
-    display:  flex;
    
    padding: 10px;
-   margin: 5px;
+   margin: 0px;
    flex-direction: row;
-   background-color: #060e3b;
+   background: radial-gradient( rgb(20, 72, 114), rgba(0,0,0,.9));
    border-radius:5px;
+  
    
 }
+
+.badgedetails{
+    margin: 5px !important;
+    font-size: 100% !important;
+  }
 
 .tabsItem{
     width: 70%;
 }
 .imgFeature {
   border-radius: 10px;
-  margin-top:40px;
+  margin-top:20px;
+  width: 350px;
+}
+
+.titleItem{
+    margin-top: 20px;
+    text-align: center;
 }
 
 .certif{
@@ -141,45 +154,41 @@ export default {
     margin-top: 5px;
 }
 
-
-
 .nav-tabs{
-  background-color:#060e3b;
+  
    margin: 30px;
 }
 .tab-content{
-    background-color:#060e3b;
+   
     color:white;
     padding-left:30px;
     padding-top: 20px;
     width: 90%;
 }
 .nav-tabs > li > a{
-  border: medium none;
-   background-color: #060e3b !important;
+  border: medium ;
+  
    color: white;
+   border: 1px;
 }
 .nav-tabs > li > a:hover{
-  background-color: white !important;
-    border: medium none;
-    border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.575) !important;
+    border: medium ;
+    border-radius: 1;
     color:black;
 }
 a.active.nav-link{
-    color: #17a2b8!important;
+    color: #237986!important;
     font: bolder;
 }
 
 .tags{
     display: flex;
     flex-direction: row;
-    
     padding: 30px;
 }
 
-.badge{
-  margin: 1px;
-}
+
 
 .badge-primary{
   background-color: #5576d1 !important;
