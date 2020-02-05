@@ -15,13 +15,17 @@
         <li class="nav-item">
              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{details_item.title_descr_1}}</a>
         </li>
+
+        <!--
         <li class="nav-item">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{details_item.title_descr_1}}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">{{details_item.title_descr_1}}</a>
         </li>
+        -->
         </ul>
+        
          <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 {{details_item.descr_1}}
@@ -33,7 +37,7 @@
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{{details_item.descr_1}}</div>
  
             </div> 
-
+        
     </div>
     <div class="col-4" id="extrasItem">
     
@@ -57,12 +61,12 @@
 
         <div class="phone-div">
         <img src="../assets/phone.svg" class="phone">
-        <p> {{contact_name}} </p>
+        <p> {{contact_phone}} </p>
         </div>
 
         <div class="mail-div">
         <img src="../assets/mail.svg" class="mail">
-        <p> {{contact_email00}} </p>
+        <p> {{contact_email}} </p>
         </div>
 
         </div>
@@ -183,11 +187,16 @@ a.active.nav-link{
 }
 
 .tags{
-    display: flex;
-    flex-direction: row;
-    padding: 30px;
+   
+   margin: 30px;
+ 
 }
 
+ul, a{
+    display:inline;
+    
+  }
+  
 
 
 .badge-primary{
@@ -251,4 +260,6 @@ p{
     filter: brightness(0) invert(1);
   
 }
+
+ 
 </style>
