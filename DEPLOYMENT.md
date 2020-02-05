@@ -1,51 +1,22 @@
 
-## Local
-Las siguientes instrucciones son para correr un ambiente local utilizando Vue CLI y Node.js.
-
-### 1. Clonar repositorio y acceder a la carpeta del proyecto Showroom
-```shell
-$ git clone https://github.com/ProyectoIntegrador2018/blue-lab.git
-$ cd blue-lab/showroom
-```
-
-### 2. Asegurarse de tener instalado NPM contenido por Node.js (https://www.npmjs.com/get-npm)
-Para asegurarse que está instalado, correr el siguiente comando.
-```shell
-$ npm -v
-```
-
-### 3. Instalar el proyecto
-```shell
-$ npm install
-```
-
-### 4. Ejecutar aplicación web compilada en tiempo real para development
-```shell
-$ npm run serve
-```
-
-### 5. Acceder al sitio
-Abrir al navegador de elección y abrir el enlace generado.
-
-### 6. Detener ejecución de aplicación web
-```shell
-Ctrl + z
-```
-
-
 ## Deployment
 Las siguientes instrucciones son para generar un archivo listo para deployment utilizando Vue CLI y Node.js.
 
-### 1. Clonar repositorio y acceder a la carpeta del proyecto Showroom
-```shell
-$ git clone https://github.com/ProyectoIntegrador2018/blue-lab.git
-$ cd blue-lab/showroom
-```
+## Deployment API
 
-### 2. Asegurarse de tener instalado NPM contenido por Node.js (https://www.npmjs.com/get-npm)
-Para asegurarse que está instalado, correr el siguiente comando.
+### Prerequisitos
+Tener instalado NPM contenido por Node.js (https://www.npmjs.com/get-npm)
+Tener una cuenta de Heroku (https://id.heroku.com/login)
+Tener instalado Heroku CLI (https://devcenter.heroku.com/articles/heroku-cli)
+
+### 1. Hacer un fork del repositorio
+Esto con el fin de tener los permisos para poder desplegar la aplicacion
+
+
+### 2. Clonar repositorio y acceder a la carpeta del proyecto Showroom_API
 ```shell
-$ npm -v
+$ git clone url-de-tu-repositorio-fork
+$ cd blue-lab/showroom_api
 ```
 
 ### 3. Instalar el proyecto
@@ -53,11 +24,42 @@ $ npm -v
 $ npm install
 ```
 
-### 4. Generar archivo de Deployment
+### 4. Darse login en Heroku Cli
 ```shell
-$ npm run build
+$ heroku login
 ```
-Se generará un archivo *.zip* con el nombre del proyecto.
+y seguir los pasos para logearse
 
-### 5. Proporcionar el archivo *.zip* a Blue People.
-Por requerimientos del cliente, se nos pidió engregar el archivo generado al contacto del Arquitecto de Software del cliente, y ellos levantarán el proyecto.
+
+### 5. Crear la conexion con heroku
+```shell
+$ heroku create
+```
+
+
+### 6. Setup dentro de heroku
+Irse al dashboard de heroku y ahi se encontrara el proyecto con el nombre que se le ha asignado, en este caso con intense-oasis-72007
+
+Dentro del proyecto en heroku ir Settings, dentro de config vars, vamos a crear las siguientes variables
+
+*(POR EL MOMENTO SE TIENE QUE CONTACTAR A alberto-bermi@hotmail.com, para tener las credenciales de acceso)
+
+### 7. Terminar la conexion del deploy
+```shell
+$ git init
+$ heroku git:remote -a intense-oasis-72007
+$ git add .
+$ git commit -m "Make it better"
+$ git push heroku master
+```
+
+### 8. Prueba de proyecto
+Ir a la liga que proporciona heroku para probar que el sistema sirva.
+
+En nuestro caso la liga es https://intense-oasis-72007.herokuapp.com/
+
+Si aparece esto en el navegador, to app esta corriendo correctamente.
+
+{"error":"This route does not exist, try /other"}
+
+
