@@ -12,11 +12,10 @@
 * [Project Setup](#proyect-setup)
 * [Running the stack for development](#running-the-stack-for-development)
 * [Stop the project](#stop-the-project)
+* [Checking code for potential issues](#checking-code-for-potential-issues)
 <!-- * [Restoring the database](#restoring-the-database)
 * [Debugging](#debugging)
 * [Running specs](#running-specs) -->
-* [Checking code for potential issues](#checking-code-for-potential-issues)
-
 
 ### Client Details
 
@@ -27,8 +26,8 @@
 
 ### Environment URLS
 
-* **Production** - [TBD](TBD)
-* **Development** - [TBD](TBD)
+* **Production** - [BlueLab Showroom](http://straight-bubble.surge.sh/)
+* **Production API** - [BlueLab Showroom API](https://quiet-cliffs-83666.herokuapp.com/)
 
 ### Team
 
@@ -75,7 +74,7 @@ Para asegurarse que está instalado, correr el siguiente comando.
 $ npm -v
 ```
 
-### Running the stack for Development
+### Running the stack for development
 Las siguientes instrucciones son para correr un ambiente local utilizando Vue CLI y Node.js.
 
 #### 1. Clonar repositorio y acceder a la carpeta del proyecto Showroom
@@ -97,7 +96,7 @@ $ npm run serve
 #### 4. Acceder al sitio
 Abrir al navegador de elección y abrir el enlace generado. Usualmente el mensaje es el siguiente.
 ```shell
- DONE  Compiled successfully in 555ms                                                                         9:31:01 PM
+ DONE  Compiled successfully in 555ms                                  9:31:01 PM
 
 
   App running at:
