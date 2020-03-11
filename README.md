@@ -33,9 +33,10 @@
 
 | Name           | Email             | Role        |
 | -------------- | ----------------- | ----------- |
-| Esthephany Ayala Yáñez | A00818207@itesm.mx | Developer |
-| Diego Jiménez Torres | A01139513@itesm.mx | Developer |
-| Alberto Bermea Treviño | A01196516@itesm.mx| Developer |
+| Gonzalo Garcia Porras | A01281414@itesm.mx | Developer |
+| Ángel Figueroa Zambrano | A00819431@itesm.mx | Developer |
+| Jorge Sabella Elizondo | A01282292@itesm.mx| Developer |
+| Jesus Lugo Santillán | A01089769@itesm.mx| Developer |
 
 ### Management tools
 
@@ -43,28 +44,24 @@ You should ask for access to this tools if you don't have it already:
 
 * [Github repo](https://github.com/ProyectoIntegrador2018/blue-lab)
 * [Backlog](https://github.com/ProyectoIntegrador2018/blue-lab/projects/1)
-* [Documentation](https://drive.com)
+* [Documentation](https://drive.google.com/open?id=1Bx7ChltEFHiexnFFUzLqzoGYP6BXSWU7)
 <!-- * [Heroku](https://crowdfront-staging.herokuapp.com/)  -->
 <!-- ## Development -->
 
 ### Technology Stack
 
 #### FrontEnd
-* HTML
-* CSS
-* Javascript
+* VueJS
+* Vuetify
 
 #### BackEnd
-* AWS Mongo API 
-* AWS S3
-* AWS Lamba
-* Vuex
+* NodeJS
+* Express
+* MongoDB
 
-#### Libraries
-* Node.js
-* Vue
-* Vuetify
-* Bootstrap
+#### DevOPS
+* AWS S3
+* AWS Lambda
 
 ### Project Setup
 
@@ -101,8 +98,7 @@ Abrir al navegador de elección y abrir el enlace generado. Usualmente el mensaj
 
   App running at:
   - Local:   http://localhost:8080/
-  - Network: http://192.168.0.11:8080/
-```
+drive```
 
 ### Stop the project
 #### Para detener la ejecución de la aplicación web
