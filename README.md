@@ -1,3 +1,7 @@
+# Links a los nuevos repositorios
+* [FrontEnd](https://github.com/teredax/showroom-front)
+* [BackEnd](https://github.com/Angulz/showroom-back)
+
 # Project Showroom
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/70f84980dbc81bc670c6/maintainability)](https://codeclimate.com/github/ProyectoIntegrador2018/blue-lab/maintainability)
